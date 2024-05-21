@@ -1,0 +1,41 @@
+/* src/App.css */
+
+/* Import the font directly from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Sedan+SC&display=swap');
+
+/* Apply the font to the body */
+body {
+  font-family: 'Sedan SC', sans-serif; /* Enclose the font name in quotes */
+}
+
+/* Rest of your styles remain the same */
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 20vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #f5dd9d;
+  min-height: 0vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(20px + 2vmin);
+  color: #bf5321;
+}
+.App-AboutUs {
+  background-color: white;
+  min-height: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(20px + 2vmin);
+  color: #bf5321;
+}
+

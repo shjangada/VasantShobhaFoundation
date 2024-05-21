@@ -1,0 +1,31 @@
+/* NavBar.css */
+.navbar {
+  background-color: #f5dd9d;
+  padding: 10px;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  margin-bottom: 60px; /* Ensure this margin is applied */
+}
+
+.nav-links {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li {
+  margin: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #bf5321;
+  font-size: calc(10px + 1vmin);
+}
+
+.nav-links a:hover {
+  color: #333333;
+}
