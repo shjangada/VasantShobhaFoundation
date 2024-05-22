@@ -1,94 +1,51 @@
-html, body, .App {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    width: 100%;
-    box-sizing: border-box;
+@import url('https://fonts.googleapis.com/css?family=Raleway:400,700,900');
+
+body {
+  font-family: 'Raleway', sans-serif;
 }
 
+/* Container */
+.container {
+  align: center;
+}
+
+/* Header Section */
 .header {
-    background-image: url('./assets/temporary_pic.png'); /* Background image */
-    background-size: cover;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-}
-
-.overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+  background: url("https://t4.ftcdn.net/jpg/06/02/62/01/360_F_602620133_IlfBBypq6WMdE9eNh0k5iqpgcGyqUPMc.jpg");
+  color: #f8d296;
+  height: 800px;
+  max-height: 100%;
+  max-width: 100%;
 }
 
 .header-titles {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: white;
-    z-index: 1;
+  color: rgb(240, 214, 143);
+  font-family: "josefin sans", serif;
+  margin-right: 150px;
+  position: relative;
+  text-align: right;
+  top: 200px;
 }
 
 .header-title {
-    margin: 10px 0; /* Add some space between the header text */
-    font-size: calc(30px + 5vmin);
-    color: #eac50d;
+  font-size: 84px;
 }
 
-.aboutus {
-    padding: 20px;
-    background-color: #fff;
+/* Foundation Info Section */
+.foundation-info {
+  background: #dacfb6;
+  color: rgb(156, 71, 10);
+  padding: 25px;
+  text-align: center;
 }
 
-.aboutus-content {
-    text-align: center;
+.info-p {
+  font-size: 20px;
+  padding: 5px;
 }
 
-.aboutus-title {
-    font-size: calc(15px + 2vmin);
-    color: #bf5321;
-}
-
-.aboutus-body {
-    font-size: calc(10px + 1vmin); /* Smaller font size */
-    color: #333333; /* Darker text color */
-    margin-top: 10px;
-}
-
-.navbar {
-    background-color: #e6e0d1;
-    padding: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    z-index: 2;
-}
-
-.nav-links {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    gap: 20px;
-}
-
-.nav-links li {
-    margin: 0;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: #bf5321;
-    font-size: calc(10px + 1vmin);
-}
-
-.nav-links a:hover {
-    color: #333333;
+hr {
+  background: #dacfb6;
+  height: 2px;
+  width: 50%;
 }

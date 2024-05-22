@@ -1,0 +1,110 @@
+frame {
+  width: 90%;
+  margin: 0px auto;
+  text-align: center;
+}
+
+button {
+  margin: 0px;
+}
+
+.custom-btn {
+  width: 130px;
+  height: 30px; /* Increased height for better visibility */
+  color: rgb(167, 190, 167);
+  border-radius: 5px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-flex; /* Changed to inline-flex for better centering */
+  justify-content: center; /* Centers content horizontally */
+  align-items: center; /* Centers content vertically */
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
+              7px 7px 20px 0px rgba(0, 0, 0, 0.1),
+              4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+  outline: none;
+}
+
+.btn-3 {
+  background: rgb(60, 102, 60);
+  background: linear-gradient(0deg, rgb(60, 102, 60) 30%, rgb(33, 56, 33) 100%);
+  width: 130px;
+  height: 30px;
+  padding: 0;
+  border: none;
+}
+
+.btn-3 span {
+  position: relative;
+  display: inline-block; /* Ensures span takes up its own block */
+  width: 100%;
+  text-align: center; /* Centers text within the span */
+}
+
+.btn-3:before,
+.btn-3:after {
+  position: absolute;
+  content: "";
+  right: 0;
+  top: 0;
+  background: rgb(33, 56, 33);
+  transition: all 0.3s ease;
+}
+
+.btn-3:before {
+  height: 0%;
+  width: 2px;
+}
+
+.btn-3:after {
+  width: 0%;
+  height: 2px;
+}
+
+.btn-3:hover {
+  background: transparent;
+  box-shadow: none;
+}
+
+.btn-3:hover:before {
+  height: 100%;
+}
+
+.btn-3:hover:after {
+  width: 100%;
+}
+
+.btn-3 span:hover {
+  color: rgb(60, 102, 60);
+}
+
+.btn-3 span:before,
+.btn-3 span:after {
+  position: absolute;
+  content: "";
+  left: 0;
+  bottom: 0;
+  background: rgb(33, 56, 33);
+  transition: all 0.3s ease;
+}
+
+.btn-3 span:before {
+  width: 2px;
+  height: 0%;
+}
+
+.btn-3 span:after {
+  width: 0%;
+  height: 2px;
+}
+
+.btn-3 span:hover:before {
+  height: 100%;
+}
+
+.btn-3 span:hover:after {
+  width: 100%;
+}

@@ -4,7 +4,7 @@ import NavBar from './NavBar';
 const GetInvolved = () => (
   <div>
     <NavBar />
-    <h2>GetInvolved</h2>
+    <h2> Get Involved </h2>
     {/* Add content for adult classes */}
   </div>
 );
