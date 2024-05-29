@@ -1,5 +1,4 @@
 body {
-  background: linear-gradient(45deg, #BB1881, #F88B50);
   font-family: sans-serif;
 }
 
@@ -28,6 +27,7 @@ body {
   text-align: center;
   cursor: pointer;
   z-index: 9;
+  background-color: #293827;
 }
 
 .envelope {
@@ -247,9 +247,6 @@ form textarea {
   cursor: pointer;
 }
 
-.form-wrapper {
-  background-color: #FF5733; /* Dark orange background color for the form */
-}
 
 .button-container {
   display: flex;

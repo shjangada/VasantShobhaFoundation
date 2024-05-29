@@ -8,8 +8,8 @@
   background-color: white;
   font-family: 'Inter', sans-serif; /* Use Inter font */
   text-align: center;
-  height: 100vh;
   color: black;
+  padding-top: 1px;
 }
 
 .page-title {
@@ -17,8 +17,8 @@
   font-size: 50px;
   font-weight: 600;
   color: #1f3a14;
-  margin: 50px 5 35px 5;
   font-family: 'Libre Baskerville', sans-serif;
+  padding-top: 50px;
 }
 
 .people-container {
@@ -34,6 +34,7 @@
   justify-content: center; /* Center the container */
   background: #fff;
   margin-bottom: 20px;
+  padding-top: 20px;
 }
 
 .our-team .pic {

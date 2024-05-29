@@ -10,9 +10,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 600px;
+    height: 700px;
     background: black;
 }
+
 
 .blurb-container h2 {
     font-size: 30px;
@@ -33,7 +34,7 @@
 
 .slideshow img {
     width: 100vw; /* Make the container take up 100% of the viewport width */
-    height: 680px; /* Make the container take up 100% of the viewport height */
+    height: 780px; /* Make the container take up 100% of the viewport height */
     object-fit: cover;
     position: relative;
     animation: swipe 30s linear infinite;
@@ -74,6 +75,26 @@
     position: relative;
     z-index: 2;
 }
+
+
+.down-arrow {
+    position: absolute;
+    bottom: 50px; /* Adjust as needed */
+    left: 50%; /* Center the arrow horizontally */
+  }
+  
+  .scroll-down-img {
+    width: 50px; /* Adjust size as needed */
+    height: 50px;
+    filter: invert(100%);
+    animation: bounce 2s infinite;
+  }
+  
+  @keyframes bounce {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(10px); }
+    100% { transform: translateY(0); }
+  }
 
 /* Other styles */
 /* Add other styles here */

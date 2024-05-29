@@ -8,6 +8,7 @@ import OpenLayersMap from './supporting/OpenLayersMap';
 import Papa from 'papaparse';
 import adultClassesCsv from './csv/AdultClasses.csv';
 import youthClassesCsv from './csv/YouthClasses.csv';
+import Footer from './Footer';
 
 const geocode = async (location) => {
   console.log(location);
@@ -100,6 +101,7 @@ const GetInvolved = () => {
         <OpenLayersMap classes={searchInitiated ? filteredClasses : allClasses} /> {/* Pass classes */}
       </div>
       <ContactBox />
+      <Footer />
     </>
   );
 };

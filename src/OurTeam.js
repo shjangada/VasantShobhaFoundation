@@ -3,6 +3,8 @@ import NavBar from './NavBar'; // Import the NavBar component
 import './supporting/style/OurTeam.css';
 import Papa from 'papaparse'; // Import PapaParse for CSV parsing
 import People from './csv/OurTeam.csv';
+import Footer from './Footer'
+
 
 const OurTeam = () => {
   const [teamMembers, setTeamMembers] = useState([]);
@@ -24,6 +26,7 @@ const OurTeam = () => {
   }, []);
 
   return (
+    <div className = 'App'>
     <div className='our-team__body'>
       <NavBar greenBackground={true} /> {/* Pass the greenBackground prop */}
       <h2 className="page-title">Our Team</h2>
@@ -42,6 +45,8 @@ const OurTeam = () => {
           </div>
         ))}
       </section>
+    </div>
+    <Footer />
     </div>
   );
 };

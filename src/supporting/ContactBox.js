@@ -37,9 +37,14 @@ const ContactBox = () => {
     <div className="content-wrapper">
       <div className="contact-text-container">
         <div className="contact-text">
-          <p>
-            Feel free to shoot us a message and we will get back to you as soon as possible. You can also email us at <strong>info@vasantshobhafoundation.org</strong>
-          </p>
+        <p>
+          Feel free to shoot us a message and we will get back to you as soon as possible. You can also email us at{' '}
+          <strong>
+            <a href="mailto:info@vasantshobhafoundation.org" style={{ textDecoration: 'none', color: 'inherit' }}>
+              info@vasantshobhafoundation.org
+            </a>
+          </strong>
+        </p>
         </div>
       </div>
       <form className="form" id="contactForm" onSubmit={handleSubmit}>

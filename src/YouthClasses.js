@@ -7,6 +7,7 @@ import photo1 from './supporting/style/assets/kidphotos/kidpic1.JPG';
 import photo2 from './supporting/style/assets/kidphotos/kidpic2.JPG';
 import photo3 from './supporting/style/assets/kidphotos/kidpic3.JPG';
 import photo4 from './supporting/style/assets/kidphotos/kidpic4.JPG';
+import Footer from './Footer';
 
 const YouthClasses = () => {
   const [classes, setClasses] = useState([]);
@@ -46,8 +47,12 @@ const YouthClasses = () => {
             <img src={photo3} alt="Photo 3" />
             <img src={photo4} alt="Photo 4" />
         </div>
+        <div className="down-arrow">
+          <img src="https://static.thenounproject.com/png/196759-200.png" alt="Scroll Down" className="scroll-down-img" />
+        </div>
       </div>
       <SearchableClassList classes={classes} />
+      <Footer />
     </div>
   );
 };

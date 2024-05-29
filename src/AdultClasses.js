@@ -4,6 +4,8 @@ import NavBar from './NavBar';
 import './supporting/style/SearchableClassList.css'; // Import your CSS file for styling
 import Classes from './csv/AdultClasses.csv'
 import SearchableClassList from './SearchableClassList';
+import Footer from './Footer';
+
 const AdultClasses = () => {
   const [classes, setClasses] = useState([]);
 
@@ -42,8 +44,12 @@ const AdultClasses = () => {
             <img src="https://imageio.forbes.com/specials-images/imageserve/61d5b5f9529aee8feb22c68a/Rear-view-of-schoolgirl-raising-her-arm-to-answer-the-question-in-the-classroom-/960x0.jpg?format=jpg&width=960" alt="Photo 3" />
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThSNorR78HwDdX2MAy4EYoOD14zoxooRrolisgA3J_Mw&s" alt="Photo 4" />
         </div>
+        <div className="down-arrow">
+            <img src="https://static.thenounproject.com/png/196759-200.png" alt="Scroll Down" className="scroll-down-img" />
+        </div>
       </div>
       <SearchableClassList classes={classes} />
+      <Footer />
     </div>
   );
 };

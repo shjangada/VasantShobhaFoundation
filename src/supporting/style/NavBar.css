@@ -26,6 +26,8 @@
   font-size: 1.3em; /* Increase font size for better visibility */
   color: inherit; /* Inherit text color */
   font-family: 'Libre Baskerville', sans-serif;
+  padding-top: 10px;
+  padding-left: 20px;
 }
 
 .navbar__scrolled {
@@ -42,7 +44,7 @@
   font-size: 1.1em;
   justify-content: flex-end; /* Align links to the right */
   margin-right: 25px; /* Add margin to separate links from the right edge */
-  font-weight: 250;
+  font-weight: 300;
 }
 
 .navbar__container-links li {
@@ -56,5 +58,5 @@
 }
 
 .navbar__container-links a:hover {
-  color: #333333; /* Change color on hover */
+  color: #9b9393; /* Change color on hover */
 }
