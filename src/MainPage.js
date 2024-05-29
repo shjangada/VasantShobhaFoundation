@@ -1,6 +1,8 @@
 import React from 'react';
-import './style/MainPage.css';  // Consolidated CSS file
+import './NavBar'; // Import the NavBar component
+import './supporting/style/MainPage.css';  // Consolidated CSS file
 import NavBar from './NavBar'; // Import the NavBar component
+
 
 const Header = () => (
   <header className="header">

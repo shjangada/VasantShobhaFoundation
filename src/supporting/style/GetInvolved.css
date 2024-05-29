@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+@import '~@fortawesome/fontawesome-free/css/all.css';
+/* GetInvolved.css */
+
+.get-involved__body {
+  width: 100%;
+  margin: 0 auto;
+  background-color: white; /* Ensure a solid background color */
+  font-family: 'Raleway', sans-serif;
+  text-align: center;
+  height: 100vh;
+  color: darkgreen;
+  padding-top: 150px; /* Adjust padding to account for fixed navbar height */
+}
+
+.get-involved__body h2 {
+  display: block;
+  font-size: 40px;
+  font-weight: 600;
+  color: rgb(8, 53, 8);
+  margin: 15px 0 15px 0;
+  font-family: 'Libre Baskerville', sans-serif;
+  padding-top: 50px; /* Adjust padding to account for fixed navbar height */
+
+}
+
+body {
+  background: #ffffff; /* Background color for the entire page */
+  margin: 0;
+}
+
+.search-form {
+  display: flex;
+  flex-direction: row; /* Change to row to align items horizontally */
+  justify-content: center; /* Center the items */
+  align-items: center;
+  gap: 10px;
+  margin: 20px 0;
+}
+.search-form input,
+.search-form select,
+.search-form button {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.search-form button {
+  background-color: darkgreen;
+  color: white;
+  cursor: pointer;
+}
+
+.search-form button:hover {
+  background-color: #45a049;
+}
+/* Existing styles */
+
+.classes-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap; /* Allow wrapping of class boxes */
+  justify-content: center; /* Center the items */
+  gap: 20px; /* Add gap between items */
+}
+
+.class-box {
+  border: 1px solid #ccc;
+  width: 20%;
+  margin-bottom: 15px;
+  display: inline-block; /* Display as inline-block to make them appear next to each other */
+  border-radius: 5px;
+  background: white;
+  height: 170px;
+  padding: 10px; /* Add padding for better spacing */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for better appearance */
+  text-align: left; /* Align text to left */
+}
+
+/* Popup styles */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  position: relative;
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 600px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  color: rgb(4, 44, 4);
+}
+
+.close-btn {
+  background: transparent;
+  color: grey;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  font-size: 20px;
+  line-height: 30px;
+  text-align: center;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  outline: none;
+}

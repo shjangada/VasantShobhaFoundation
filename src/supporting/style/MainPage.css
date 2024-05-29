@@ -11,15 +11,17 @@ body {
 
 /* Header Section */
 .header {
-  background: url("https://t4.ftcdn.net/jpg/06/02/62/01/360_F_602620133_IlfBBypq6WMdE9eNh0k5iqpgcGyqUPMc.jpg");
+  background: url("https://coolbackgrounds.io/images/backgrounds/index/ranger-4df6c1b6.png") no-repeat center center;
+  background-size: cover; /* Ensures the image covers the container */
   color: #f8d296;
-  height: 800px;
-  max-height: 100%;
-  max-width: 100%;
+  width: 100vw; /* Ensures the header takes up the full width of the screen */
+  height: 600px; /* Sets the height to 500px */
+  background-position: center center; /* Centers the image */
 }
 
+
 .header-titles {
-  color: rgb(240, 214, 143);
+  color: lightgrey;
   font-family: "josefin sans", serif;
   margin-right: 150px;
   position: relative;
@@ -33,10 +35,11 @@ body {
 
 /* Foundation Info Section */
 .foundation-info {
-  background: #dacfb6;
-  color: rgb(156, 71, 10);
+  background: white;
+  color: darkgreen;
   padding: 25px;
   text-align: center;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .info-p {

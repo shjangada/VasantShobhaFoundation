@@ -1,5 +1,5 @@
 import React from 'react';
-import '/Users/shreyajangada/vasant-shobha/src/style/DescriptionPopup.css';
+import './style/DescriptionPopup.css';
 
 const DescriptionPopup = ({ classEntry, onClose }) => {
   return (

@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+
+/* NavBar.css */
+.navbar__container {
+  padding: 10px 20px; /* Reduce padding */
+  display: flex;
+  justify-content: space-between; /* Ensure title is on the left and links on the right */
+  align-items: center;
+  font-family: 'Inter', sans-serif; /* Apply the font family */
+  color: white; /* Set the color to dark green */
+  position: fixed; /* Set position to fixed */
+  z-index: 1000;
+  width: 100%; /* Ensure the navbar spans the full width */
+  position: fixed;
+  width: 98%
+}
+
+.navbar__green {
+  color: darkgreen; /* Ensure text is white on green background */
+}
+
+.navbar__container-title {
+  font-weight: bold; /* Make the font bold */
+  font-size: 1.3em; /* Increase font size for better visibility */
+  color: inherit; /* Inherit text color */
+  font-family: 'Libre Baskerville', sans-serif;
+}
+
+.navbar__scrolled {
+  background: rgba(0, 0, 0, 0.5); /* Overlay background color when scrolled */
+  color: white; /* Ensure text color is white */
+}
+
+.navbar__container-links {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 25px; /* Adjust gap between links */
+  font-size: 1.1em;
+  justify-content: flex-end; /* Align links to the right */
+  margin-right: 25px; /* Add margin to separate links from the right edge */
+  font-weight: 250;
+}
+
+.navbar__container-links li {
+  margin: 0;
+}
+
+.navbar__container-links a {
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Inherit text color */
+  font-size: 1em; /* Set a consistent font size */
+}
+
+.navbar__container-links a:hover {
+  color: #333333; /* Change color on hover */
+}

@@ -1,5 +1,5 @@
 import React from 'react';
-import '/Users/shreyajangada/vasant-shobha/src/style/SignUpButton.css';
+import './style/SignUpButton.css';
 
 const SignUpButton = ({ onClick }) => {
   return (

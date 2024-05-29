@@ -1,0 +1,92 @@
+/* Font imports */
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+/* Global styles */
+.our-team__body {
+  width: 100%;
+  background-color: white;
+  font-family: 'Inter', sans-serif; /* Use Inter font */
+  text-align: center;
+  height: 100vh;
+  color: black;
+}
+
+.page-title {
+  display: block;
+  font-size: 50px;
+  font-weight: 600;
+  color: #1f3a14;
+  margin: 50px 5 35px 5;
+  font-family: 'Libre Baskerville', sans-serif;
+}
+
+.people-container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.our-team {
+  width: 70%;
+  display: flex;
+  justify-content: center; /* Center the container */
+  background: #fff;
+  margin-bottom: 20px;
+}
+
+.our-team .pic {
+  width: 300px;
+  height: 400px; /* Set the height to match the width */
+  overflow: hidden; /* Hide the overflow */
+  margin-top: 20px;
+}
+
+.our-team .pic img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover; /* Cover the entire container */
+}
+
+.our-team .details {
+  width: 55%;
+  padding-left: 30px; /* Adjust padding */
+  text-align: left;
+}
+
+.our-team .name {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.8rem; /* Adjust as needed */
+  text-transform: uppercase; /* Convert to all caps */
+  font-weight: 400; /* Set name to semi-bold */
+  color: black; /* Set text color to black */
+  margin-bottom: 7px;
+}
+
+.our-team .position,
+.our-team .location {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.2rem; /* Adjust as needed */
+  color: black; /* Set text color to black */
+  margin-top: 5px; /* Add space between name and position */
+  text-transform: uppercase; /* Convert to all caps */
+  font-weight: 300; /* Set position and location to lighter weight */
+  margin-bottom: 10px; /* Add margin-bottom */
+  display: block; /* Display each element on a separate line */
+}
+
+.our-team .description {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.1rem; /* Adjust as needed */
+  color: black; /* Set text color to black */
+  margin-top: 20px; /* Add space between name and position */
+  font-weight: 400; /* Set position and location to lighter weight */
+  display: block; /* Display each element on a separate line */
+}
+
+@media only screen and (max-width: 992px) {
+  .our-team {
+    width: 100%;
+  }
+}

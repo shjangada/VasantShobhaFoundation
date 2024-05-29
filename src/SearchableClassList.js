@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './style/SearchableClassList.css';
+import './supporting/style/SearchableClassList.css';
 import SignUpModal from './supporting/SignUpModal';
 import { saveAs } from 'file-saver';
 import DescriptionPopup from './supporting/DescriptionPopup.js';
@@ -63,7 +63,7 @@ const filterClasses = (classes, searchText, sortBy) => {
       break;
     case 'availability':
       filteredClasses.sort((a, b) => {
-        const statusComparison = a.Status.localeCompare(b.Status);
+        const statusComparison = b.Status.localeCompare(a.Status);
         if (statusComparison !== 0) {
           return statusComparison;
         }
@@ -133,7 +133,7 @@ const SearchableClassList = ({ classes }) => {
         <SearchInput value={searchText} onChange={newText => setSearchText(newText)} />
         <div className="sort-dropdown">
           <select className="sort__select" onChange={handleSortChange} value={sortBy}>
-            <option value="" disabled>Select Sort By</option>
+            <option value="" disabled>Sort By</option>
             <option value="location">Location</option>
             <option value="time">Time</option>
             <option value="availability">Availability</option>
