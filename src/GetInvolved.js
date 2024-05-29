@@ -3,12 +3,12 @@ import './supporting/style/GetInvolved.css';
 import './supporting/style/OpenLayersMap.css';
 import './supporting/style/SearchableClassList.css';
 import NavBar from './NavBar';
-import ContactBox from './supporting/ContactBox';
 import OpenLayersMap from './supporting/OpenLayersMap';
 import Papa from 'papaparse';
 import adultClassesCsv from './csv/AdultClasses.csv';
 import youthClassesCsv from './csv/YouthClasses.csv';
 import Footer from './Footer';
+import ContactUs from './supporting/ContactBox';
 
 const geocode = async (location) => {
   console.log(location);
@@ -75,11 +75,11 @@ const GetInvolved = () => {
 
   return (
     <>
-    <NavBar greenBackground={true} /> {/* Pass the greenBackground prop */}
+      <NavBar greenBackground={true} /> {/* Pass the greenBackground prop */}
       <div className="get-involved__body">
         <h2>Get Involved</h2>
         <div className="search-form">
-          <h3>Find Events Near You:   </h3>
+          <h3>Find Events Near You:</h3>
           <input
             type="text"
             placeholder="Enter Zip Code"
@@ -100,7 +100,7 @@ const GetInvolved = () => {
         </div>
         <OpenLayersMap classes={searchInitiated ? filteredClasses : allClasses} /> {/* Pass classes */}
       </div>
-      <ContactBox />
+      <ContactUs/>
       <Footer />
     </>
   );

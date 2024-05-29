@@ -22,7 +22,7 @@ const Class = ({ classEntry, onClassClick, onSignUpClick }) => {
         {classEntry.Status === 'Yes' ? (
           <SignUpButton onClick={(e) => { e.stopPropagation(); onSignUpClick(classEntry); }} />
         ) : (
-          <span style={{ backgroundColor: 'lightpink', borderRadius: '10px', padding: '5px 30px', fontSize: 14 }}>
+          <span style={{ backgroundColor: 'lightpink', borderRadius: '10px', padding: '7px 35px', fontSize: 14 }}>
             Class Full
           </span>
         )}

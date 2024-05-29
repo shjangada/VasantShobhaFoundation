@@ -1,288 +1,35 @@
-body {
-  font-family: sans-serif;
-}
+/* SignUpModal.css */
 
-.contact-wrapper {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1000;  
-}
-
-.flip-card {
-  border-radius: 0.5em;
+.modal-overlay {
   position: fixed;
-  top: 1em;
-  left: 1em;
-  width: 5em;
-  padding: 0.5em;
-  border: 0.1em solid #fff;
-  color: #fff;
-  text-align: center;
-  cursor: pointer;
-  z-index: 9;
-  background-color: #293827;
-}
-
-.envelope {
-  position: relative;
-  display: block;
-  width: 30em;
-  height: 35em;
-  margin: 0 auto;
-}
-
-.envelope.active .content {
-  padding: 15em 2em 2em;
-}
-
-.envelope .content {
-  padding: 2em;
-  box-sizing: border-box;
-  position: relative;
-  z-index: 9;
-  transition: all 0.5s ease-in-out;
-  transition-delay: 1s;
-}
-
-.envelope .top-wrapper,
-.envelope .bottom-wrapper {
-  box-sizing: border-box;
-  background: rgb(3, 63, 3);
-  color: #fff;
-}
-
-.envelope .top-wrapper {
-  padding: 2em 2em 0;
-  border-top-left-radius: 0.5em;
-  border-top-right-radius: 0.5em;
-}
-
-.envelope .bottom-wrapper {
-  padding: 0 2em 2em;
-  border-bottom-left-radius: 0.5em;
-  border-bottom-right-radius: 0.5em;
-  transition: all 0.5s ease-in-out;
-  transform-origin: top;
-  transform-style: preserve-3d;
-  position: relative;
-  overflow: hidden;
-  margin-top: -1px;
-}
-
-
-form label {
-  display: block;
-  padding-bottom: 0.5em;
-}
-
-form input,
-form textarea {
-  width: 100%;
-  box-shadow: 0;
-  background: transparent;
-  color: #fff;
-}
-
-form input {
-  border-width: 0 0 0.1em;
-  border-color: #fff;
-  border-style: solid;
-}
-
-form textarea {
-  border: 0.1em solid #fff;
-  border-radius: 0.25em;
-}
-
-.submit-card {
-  background: #fff;
-  color: #222;
-  text-align: center;
-  padding: 0.5em;
-  box-sizing: border-box;
-  width: 100%;
-  border: 0;
-  box-shadow: none;
-  border-radius: 0.25em;
-  cursor: pointer;
-}
-
-.input {
-  padding-bottom: 1em;
-}
-
-.paper {
-  position: absolute;
-  display: block;
   top: 0;
   left: 0;
-  border-bottom-left-radius: 0.5em;
-  border-bottom-right-radius: 0.5em;
-  overflow: hidden;
-}
-
-.paper.back {
-  top: 0;
-}
-
-.paper.back:before {
-  content: '';
-  display: block;
-  width: 0;
-  height: 0;
-  margin-bottom: -1px;
-  border-style: solid;
-  border-width: 0 15em 10em 15em;
-  border-color: transparent transparent #d3d3d3 transparent;
-  transform-origin: bottom;
-  transform-style: preserve-3d;
-  z-index: 0;
-}
-
-.paper.back:after {
-  content: '';
-  display: block;
-  background-color: #d3d3d3;
-  width: 30em;
-  height: 20em;
-}
-
-.paper.front {
-  top: 10em;
-  box-shadow: 0.1em 0.5em 0.5em rgba(0,0,0,0.25);
-  z-index: 0;
-}
-
-.paper.front:before {
-  content: '';
-  display: block;
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 10em 15em 0 15em;
-  border-color: transparent #fff;
-}
-
-.paper.front:after {
-  content: '';
-  display: block;
-  width: 30em;
-  height: 10em;
-  background: #fff;
-  margin-top: -1px;
-}
-
-@keyframes envelope-front {
-  0% {
-    top: 10em;
-    z-index: 0;
-  }
-  50% {
-    top: 15em;
-    z-index: 9;
-  }
-  100% {
-    top: 10em;
-    z-index: 9;
-  }
-}
-
-@keyframes envelope-back {
-  0% {
-    top: 0;
-  }
-  50% {
-    top: 5em;
-  }
-  100% {
-    top: 0;
-  }
-}
-
-@keyframes envelope-back-before {
-  0% {
-    border-color: transparent transparent #d3d3d3 transparent;
-    transform: rotateX(0deg);
-    z-index: 0;
-  }
-  100% {
-    border-color: transparent transparent #fff transparent;
-    transform: rotateX(180deg);
-    z-index: 99;
-    position: relative;
-  }
-}
-
-.submit-button-old {
-  background: #fff;
-  color: #222;
-  text-align: center;
-  padding: 0.5em;
-  box-sizing: border-box;
   width: 100%;
-  border: 0;
-  box-shadow: none;
-  border-radius: 0.25em;
-  cursor: pointer;
-  margin-right: 1em; /* Added margin between buttons */
-}
-
-.cancel-button-old {
-  background: #fff;
-  color: #222;
-  text-align: center;
-  padding: 0.5em;
-  box-sizing: border-box;
-  width: 100%;
-  border: 0;
-  box-shadow: none;
-  border-radius: 0.25em;
-  cursor: pointer;
-}
-
-
-.button-container {
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
   display: flex;
-  justify-content: space-between;
-  margin-top: 1em; /* Add margin between buttons */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
 }
 
-.modal {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 1000; /* Ensure the modal appears above other content */
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 600px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
 }
 
-
-@keyframes openEnvelope {
-  0% {
-    top: 0;
-  }
-  50% {
-    top: 5em;
-  }
-  100% {
-    top: 0;
-  }
-}
-
-@keyframes closeEnvelope {
-  0% {
-    top: 5em;
-  }
-  50% {
-    top: 0;
-  }
-  100% {
-    top: 5em;
-  }
+.cancel-button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: grey;
 }
