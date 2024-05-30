@@ -4,7 +4,6 @@
 
 /* NavBar.css */
 .navbar__container {
-  padding: 10px 20px; /* Reduce padding */
   display: flex;
   justify-content: space-between; /* Ensure title is on the left and links on the right */
   align-items: center;
@@ -21,18 +20,18 @@
   color: darkgreen; /* Ensure text is white on green background */
 }
 
-.navbar__container-title {
-  font-weight: bold; /* Make the font bold */
-  font-size: 1.3em; /* Increase font size for better visibility */
-  color: inherit; /* Inherit text color */
-  font-family: 'Libre Baskerville', sans-serif;
-  padding-top: 10px;
-  padding-left: 20px;
+.navbar__container-logo {
+  padding-left: 50px; /* Adjust left padding */
+}
+
+.navbar__container-logo img {
+  width: 150px; /* Adjust logo width */
 }
 
 .navbar__scrolled {
   background: rgba(0, 0, 0, 0.5); /* Overlay background color when scrolled */
   color: white; /* Ensure text color is white */
+  width: 100%;
 }
 
 .navbar__container-links {
@@ -44,11 +43,15 @@
   font-size: 1.1em;
   justify-content: flex-end; /* Align links to the right */
   margin-right: 25px; /* Add margin to separate links from the right edge */
-  font-weight: 300;
+  font-weight: 600;
+  margin-top: -35px; /* Move links a bit higher */
+  text-transform: uppercase;
+  width: 100vw;
 }
 
 .navbar__container-links li {
   margin: 0;
+  margin-right: 15px;
 }
 
 .navbar__container-links a {

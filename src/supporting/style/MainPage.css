@@ -19,7 +19,7 @@ body {
   background-size: cover; /* Ensures the image covers the container */
   color: white;
   width: 100vw; /* Ensures the header takes up the full width of the screen */
-  height: 760px; /* Sets the height to 500px */
+  height: 100vh; /* Sets the height to 500px */
   background-position: center center; /* Centers the image */
   font-family: "Libre Baskerville", sans-serif;
 }

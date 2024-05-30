@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import './supporting/style/NavBar.css';
+import Logo from './supporting/newlogo.png';
 
 const NavBar = ({ greenBackground }) => {
   const [scrolled, setScrolled] = useState(false);
@@ -22,13 +23,13 @@ const NavBar = ({ greenBackground }) => {
 
   return (
     <nav className={`navbar__container ${greenBackground ? 'navbar__green' : 'navbar__main'} ${scrolled ? 'navbar__scrolled' : ''}`}>
-      <div className="navbar__container-title">VASANT SHOBHA FOUNDATION</div>
+      <div className="navbar__container-logo"><img src={Logo} alt="Logo" /></div>
       <ul className="navbar__container-links">
         <li><Link to="/">Home</Link></li>
-        <li><Link to="/youth">Youth Classes</Link></li>
-        <li><Link to="/adult">Adult Classes</Link></li>
-        <li><Link to="/team">Our Team</Link></li>
-        <li><Link to="/involved">Get Involved</Link></li>
+        <li><Link to="/youth">Youth</Link></li>
+        <li><Link to="/adult">Adult</Link></li>
+        <li><Link to="/team">Team</Link></li>
+        <li><Link to="/involved">Contact</Link></li>
       </ul>
     </nav>
   );
