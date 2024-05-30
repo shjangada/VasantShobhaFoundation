@@ -10,4 +10,4 @@ Classes available for youth and adult students, with general descriptions, searc
 
 # Get Involved
 
-Interactive map for users to find events near them, contact box.
+Interactive map for users to find events near them and a contact box.
