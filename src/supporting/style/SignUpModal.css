@@ -21,6 +21,7 @@
   max-width: 600px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   position: relative;
+  box-sizing: border-box;
 }
 
 .cancel-button {
@@ -32,4 +33,16 @@
   font-size: 20px;
   cursor: pointer;
   color: grey;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 480px) {
+  .modal-content {
+    width: 90%;
+    padding: 15px;
+  }
+
+  .cancel-button {
+    font-size: 18px;
+  }
 }

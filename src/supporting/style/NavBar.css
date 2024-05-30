@@ -13,7 +13,8 @@
   z-index: 1000;
   width: 100%; /* Ensure the navbar spans the full width */
   position: fixed;
-  width: 98%
+  width: 98%;
+  box-sizing: border-box;
 }
 
 .navbar__green {
@@ -47,6 +48,7 @@
   margin-top: -35px; /* Move links a bit higher */
   text-transform: uppercase;
   width: 100vw;
+  align-items: center;
 }
 
 .navbar__container-links li {
@@ -62,4 +64,43 @@
 
 .navbar__container-links a:hover {
   color: #9b9393; /* Change color on hover */
+}
+
+@media (max-width: 768px) {
+  .navbar__container {
+    flex-direction: column; /* Stack logo and links vertically */
+    align-items: flex-start; /* Align items to the start */
+    padding: 10px 20px; /* Reduce padding for smaller screens */
+  }
+
+  .navbar__container-logo {
+    margin-bottom: 10px; /* Add some margin to separate the logo from the links */
+  }
+
+  .navbar__container-links {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+
+  .navbar__container-links a {
+    font-size: 0.9em; /* Reduce font size for links */
+  }
+}
+
+/* Media query for screens smaller than 480px */
+@media (max-width: 480px) {
+  .navbar__container {
+    padding: 10px 15px; /* Further reduce padding for smaller screens */
+  }
+
+  .navbar__container-logo img {
+    width: 120px; /* Adjust logo width for smaller screens */
+  }
+
+  .navbar__container-links {
+    font-size: 0.8em; /* Further reduce font size for links */
+    flex-wrap: wrap;
+  }
 }

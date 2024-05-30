@@ -89,3 +89,16 @@ button {
   width: 0%;
   height: 2px;
 }
+
+@media (max-width: 768px) {
+  .custom-btn {
+    font-size: 0.9em; /* Adjusted font size */
+    width: 60%; /* Adjusted width for smaller screens */
+    height: 35px; /* Adjusted height for smaller screens */
+  }
+
+  .btn-3 {
+    width: 60%; /* Adjusted width for smaller screens */
+    height: 35px; /* Adjusted height for smaller screens */
+  }
+}

@@ -3,25 +3,14 @@
 @import '~@fortawesome/fontawesome-free/css/all.css';
 /* GetInvolved.css */
 
-.get-involved__body {
-  width: 100%;
-  margin: 0 auto;
-  background-color: white; /* Ensure a solid background color */
-  font-family: 'Raleway', sans-serif;
-  text-align: center;
-  height: 100vh;
-  color: darkgreen;
-  padding-top: 150px; /* Adjust padding to account for fixed navbar height */
-}
-
 .get-involved__body h2 {
   display: block;
-  font-size: 40px;
   font-weight: 600;
-  color: rgb(8, 53, 8);
+  color: rgb(18, 30, 18);
   margin: 15px 0 15px 0;
   font-family: 'Libre Baskerville', sans-serif;
   padding-top: 100px; /* Adjust padding to account for fixed navbar height */
+  font-size: 70px; /* Increase font size */
 
 }
 
