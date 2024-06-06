@@ -27,48 +27,11 @@ The website serves as a platform to provide information about the foundation, it
 - **Navigation**: Intuitive navigation menu to access various sections of the website.
 - **Responsive Design**: Ensures the website is accessible on all devices.
 
-## Project Structure
-
-The project follows a typical web application structure with a focus on maintainability and scalability. Below is the folder setup:
-
-```
-/VasantShobhaWebsite
-│
-├── /assets
-│   ├── /images
-│   ├── /styles
-│   └── /scripts
-│
-├── /components
-│   ├── Header.js
-│   ├── Footer.js
-│   └── Navigation.js
-│
-├── /pages
-│   ├── About.js
-│   ├── Classes.js
-│   ├── GetInvolved.js
-│   ├── OurTeam.js
-│   └── Home.js
-│
-├── /utils
-│   ├── api.js
-│   └── helpers.js
-│
-├── /data
-│   ├── classes.json
-│   └── events.json
-│
-├── index.html
-├── app.js
-├── README.md
-└── package.json
-```
 
 ### Folder Descriptions
 
 - **/assets**: Contains static assets like images, stylesheets, and scripts.
-- **/components**: Reusable UI components such as the header, footer, and navigation bar.
+- **/supporting**: Reusable UI components such as the header, footer, and navigation bar.
 - **/pages**: Each file represents a different page on the website.
 - **/utils**: Utility functions and API call handlers.
 - **/data**: Static JSON files for initial data like classes and events.
