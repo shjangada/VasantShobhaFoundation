@@ -33,7 +33,6 @@ The website serves as a platform to provide information about the foundation, it
 - **/assets**: Contains static assets like images, stylesheets, and scripts.
 - **/supporting**: Reusable UI components such as the header, footer, and navigation bar.
 - **/pages**: Each file represents a different page on the website.
-- **/utils**: Utility functions and API call handlers.
 - **/data**: Static JSON files for initial data like classes and events.
 
 ## Navigation
