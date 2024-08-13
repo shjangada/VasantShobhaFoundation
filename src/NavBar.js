@@ -26,9 +26,9 @@ const NavBar = ({ greenBackground }) => {
       <div className="navbar__container-logo"><img src={Logo} alt="Logo" /></div>
       <ul className="navbar__container-links">
         <li><Link to="/">Home</Link></li>
-        <li><Link to="/youth">Youth</Link></li>
-        <li><Link to="/adult">Adult</Link></li>
         <li><Link to="/team">Team</Link></li>
+        <li><Link to="/classes">Classes</Link></li>
+        <li><Link to="/events">Events</Link></li>
         <li><Link to="/involved">Contact</Link></li>
       </ul>
     </nav>

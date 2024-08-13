@@ -1,11 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap');
+
 frame {
   width: 90%;
-  margin: 0px auto;
+  margin: 10px auto;
   text-align: center;
 }
 
 button {
-  margin: 0px;
+  margin: 10px;
 }
 
 .custom-btn {
@@ -13,7 +15,7 @@ button {
   height: 30px; /* Increased height for better visibility */
   color: #143207;
   border-radius: 5px;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Raleway', sans-serif;
   font-weight: 500;
   background: transparent;
   cursor: pointer;

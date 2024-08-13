@@ -5,8 +5,7 @@ import './supporting/style/SearchableClassList.css';
 import NavBar from './NavBar';
 import OpenLayersMap from './supporting/OpenLayersMap';
 import Papa from 'papaparse';
-import adultClassesCsv from './csv/AdultClasses.csv';
-import youthClassesCsv from './csv/YouthClasses.csv';
+import classesCsv from './csv/Classes.csv'; // Combined CSV
 import Footer from './Footer';
 import ContactUs from './supporting/ContactBox';
 
@@ -43,21 +42,15 @@ const GetInvolved = () => {
 
   useEffect(() => {
     const loadClasses = async () => {
-      const adultResponse = await fetch(adultClassesCsv);
-      const youthResponse = await fetch(youthClassesCsv);
-      const adultCsvText = await adultResponse.text();
-      const youthCsvText = await youthResponse.text();
-      const adultData = Papa.parse(adultCsvText, { header: true }).data;
-      const youthData = Papa.parse(youthCsvText, { header: true }).data;
+      const response = await fetch(classesCsv);
+      const csvText = await response.text();
+      const data = Papa.parse(csvText, { header: true }).data;
 
-      for (let cls of adultData) {
-        cls.coordinates = await geocode(cls.Location);
-      }
-      for (let cls of youthData) {
+      for (let cls of data) {
         cls.coordinates = await geocode(cls.Location);
       }
 
-      setAllClasses([...adultData, ...youthData]);
+      setAllClasses(data);
     };
 
     loadClasses();
@@ -68,16 +61,26 @@ const GetInvolved = () => {
     const userLocation = await geocode(zipCode);
     const filtered = allClasses.filter(cls => {
       const distance = haversineDistance(userLocation, cls.coordinates);
-      return distance <= radius;
+      return distance <= radius && (classType === 'all' || cls.AgeGroup === classType);
     });
     setFilteredClasses(filtered);
+  };
+
+  const titleStyle = {
+    display: 'block',
+    fontSize: '50px',
+    fontWeight: '600',
+    color: '#1f3a14',
+    fontFamily: "'Libre Baskerville', sans-serif",
+    paddingTop: '80px',
+    margin: '15px 0',
   };
 
   return (
     <>
       <NavBar greenBackground={true} /> {/* Pass the greenBackground prop */}
       <div className="get-involved__body">
-        <h2>Get Involved</h2>
+        <h2 style={titleStyle}>Get Involved</h2>
         <div className="search-form">
           <h3>Find Events Near You:</h3>
           <input
@@ -87,6 +90,7 @@ const GetInvolved = () => {
             onChange={(e) => setZipCode(e.target.value)}
           />
           <select value={classType} onChange={(e) => setClassType(e.target.value)}>
+            <option value="all">All Ages</option>
             <option value="youth">Youth</option>
             <option value="adult">Adult</option>
           </select>

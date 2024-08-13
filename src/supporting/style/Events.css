@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+@import '~@fortawesome/fontawesome-free/css/all.css';
+
+/* General styles for events page */
+
+.events__body h2 {
+    display: block;
+    font-size: 50px;
+    font-weight: 600;
+    color: #193d09;
+    font-family: 'Libre Baskerville', sans-serif;
+    margin: 0px 0;
+    padding-top: 100px;
+    text-align: center;
+}
+
+.events-page {
+    font-family: 'Raleway', sans-serif;
+    text-align: left;
+    padding: 0;
+}
+
+.events-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.events-section {
+    width: 90%;
+    margin-bottom: 40px;
+}
+
+.events-section h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.events-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 30px;
+}
+/* CSS for the event box */
+.event-box {
+    border-radius: 5px;
+    background: white;
+    text-align: center;
+    width: 300px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    position: relative; /* Ensure positioning for the pseudo-element */
+    box-shadow: 0 4px 8px rgba(119, 118, 118, 0.2); /* Shadow on sides and bottom */
+    overflow: hidden; /* Hide anything that overflows the box */
+}
+
+.event-photo-container {
+    position: relative;
+    width: 100%;
+    height: 200px; /* Match height of event-photo */
+}
+
+.event-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px; /* Optional if you want the image to be rounded */
+}
+
+.event-time {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 0.8em;
+    color: #ffffff;
+    background: rgba(0, 0, 0, 0.318);
+    padding: 5px;
+    border-radius: 3px;
+    box-shadow: 0 1px 2px rgba(119, 118, 118, 0.2);
+}
+
+.sign-up-icon {
+    position: absolute;
+    bottom: 0;
+    right: 0;  
+    background: white;
+    border: none;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(119, 118, 118, 0.2); 
+    cursor: pointer;
+    width: 50px;
+    height: 50px; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5em; 
+    z-index: 1;
+    transition: transform 0.3s ease; /* Add transition for smooth scaling */
+}
+
+.sign-up-icon:hover {
+    transform: scale(1.2); /* Increase size by 20% on hover */
+}
+
+.event-text-container {
+    padding: 15px;
+}
+
+.event-box h3 {
+    margin: 0px 0;
+    font-size: 1.2em;
+}
+
+.event-box p {
+    margin-bottom: 15px;
+    font-size: 0.9em;
+}
+
+@media only screen and (max-width: 768px) {
+    .events-section {
+        width: 95%;
+    }
+    .events-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+    .event-box {
+        width: 90%;
+        max-width: 400px;
+    }
+}

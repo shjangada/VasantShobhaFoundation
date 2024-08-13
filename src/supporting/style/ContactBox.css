@@ -11,23 +11,24 @@
 }
 
 .contact-text-container {
-  flex: 1;
+  flex: 1 1 300px;
   display: flex;
   justify-content: space-evenly;
-  margin-right: 50px;
-  margin-left: 20px;
   background: white;
+  padding-right: 4rem;
 }
 
 .contact-text {
-  font-size: 30px;
+  font-size: 1.8em; /* Reduce font size for smaller screens */
   text-align: center;
   color: darkgreen;
   font-family: 'Raleway', sans-serif;
+  margin-top: 20px;
+  max-width: 90%; /* Limit width for smaller screens */
 }
 
 .form {
-  flex: 1;
+  flex: 1 1 400px;
   max-width: 600px;
   background: #f0f0f0;
   border-radius: 8px;
@@ -90,4 +91,11 @@
 .form button:hover {
   background: darkgreen;
   color: #fff;
+}
+
+
+@media (max-width: 768px) {
+  .contact-text {
+    font-size: 1.2em; /* Further reduce font size for screens smaller than 768px */
+  }
 }

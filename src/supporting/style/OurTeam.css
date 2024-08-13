@@ -93,12 +93,51 @@
 }
 
 @media only screen and (max-width: 768px) {
-  .page-title {
-    display: block;
-    font-size: 50px;
-    font-weight: 600;
-    color: #1f3a14;
-    font-family: 'Libre Baskerville', sans-serif;
-    padding-top: 150px;
+  .our-team .pic {
+    width: 250px;
+    height: 345px;
+    overflow: hidden;
+    margin-top: 10px;
+  }
+  .our-team .name {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.8rem; /* Adjust as needed */
+    text-transform: uppercase; /* Convert to all caps */
+    font-weight: 400; /* Set name to semi-bold */
+    color: black; /* Set text color to black */
+    margin-bottom: 7px;
+  }
+
+  .our-team .pic img {
+    width: 100%;
+    height: 345px;
+    object-fit: cover;
+  }
+
+  .our-team .position,
+  .our-team .location {
+    font-size: 1.3rem;
+    margin-right: 20px;
+  }
+
+  .our-team .description {
+    font-size: 1rem;
+    margin-top: 10px;
+  }
+
+  .our-team {
+    flex-direction: column;
+    align-items: center;
+    width: 85%;
+    background: #fff;
+    margin-bottom: 20px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .our-team .details {
+    width: 100%;
+    padding-left: 0; /* Reset padding */
+    margin-top: 20px; /* Adjust margin */
   }
 }

@@ -2,7 +2,6 @@
 
 /* General styles */
 .blurb-container {
-    position: relative;
     color: rgb(211, 209, 209);
     padding: 40px 20px;
     margin: 0 auto;
@@ -10,7 +9,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 90vh;
+    height: 92vh;
     background: black;
 }
 
@@ -34,7 +33,7 @@
 
 .slideshow img {
     width: 100vw; /* Make the container take up 100% of the viewport width */
-    height: 100vh; /* Make the container take up 100% of the viewport height */
+    height: 102vh; /* Make the container take up 100% of the viewport height */
     object-fit: cover;
     position: relative;
     animation: swipe 30s linear infinite;
@@ -77,31 +76,34 @@
 }
 
 
+/* Styles for the down arrow button */
 .down-arrow {
     position: absolute;
     bottom: 50px; /* Adjust as needed */
     left: 50%; /* Center the arrow horizontally */
-  }
-  
-  .scroll-down-img {
+    transform: translateX(-50%); /* Center horizontally */
+    cursor: pointer; /* Change cursor to indicate it's clickable */
+}
+
+.scroll-down-img {
     width: 50px; /* Adjust size as needed */
     height: 50px;
     filter: invert(100%);
     animation: bounce 2s infinite;
-  }
-  
-  @keyframes bounce {
+}
+
+/* Bounce animation for the arrow */
+@keyframes bounce {
     0% { transform: translateY(0); }
     50% { transform: translateY(10px); }
     100% { transform: translateY(0); }
-  }
+}
+
 
 /* Other styles */
 /* Add other styles here */
-
 .class__body {
     width: 100%;
-    margin: 0 auto;
     background-color: white;
     font-family: 'Raleway', sans-serif;
     text-align: center;
@@ -117,46 +119,62 @@
     align-items: center;
     justify-content: space-evenly;
     flex-wrap: wrap;
-  }
-  
-  .class-box {
-    border: 1px solid #ccc;
-    width: 20%;
-    margin-bottom: 15px;
-    display: inline-block;
-    margin-right: 15px;
-    border-radius: 5px;
-    background: white;
-    align-items: center;
-    justify-content: center;
-    text-align: center !important; /* Center align the text */
-    height: auto;
 }
 
+.class-box {
+    border: 1px solid #ccc;
+    margin-bottom: 15px;
+    display: inline-block;
+    padding: 15px;
+    padding-bottom: 25px; /* Extra space at the bottom of the box */
+    border-radius: 5px;
+    background: white;
+    text-align: center !important; /* Center align the text */
+    white-space: normal;
+    flex-direction: column;
+    min-height: 200px; 
+    box-sizing: border-box; 
+}
 
+.class-full {
+    background-color: lightpink;
+    color: black;
+    border-radius: 7px;
+    padding: 9px 35px;
+    font-size: 13px;
+}
+.class-full-spacing {
+    height: 14px; 
+}
 
+/* Ensure the text is always contained within the box */
+.class-box h3, 
+.class-box p {
+    margin: 0; /* Remove default margins to prevent overflow */
+    padding: 6px 0; /* Add padding for spacing */
+}
+
+/* Search and Sort Container */
 .search-sort-container {
-    width: 100%;
+    width: 80%;
     padding: 2%;
     display: flex;
-    align-items: center;
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+    justify-content: center; 
     margin-bottom: 20px;
-    margin-left: 200px;
-  }
+    margin-left: 90px;
+}
 
-
-
-  .search__input {
-    margin-top: 10px;
-    margin-right: 15px;
-    width: 50%;
-    align-items: center;
+/* Search Input */
+.search__input {
+    flex: 1; /* Allow input to grow and shrink */
+    margin: 10px; /* Add margin between items */
     padding: 12px 24px;
     background-color: transparent;
     transition: transform 250ms ease-in-out;
     font-size: 14px;
     line-height: 18px;
-    color:1f3a14;
+    color: #1f3a14;
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E");
     background-repeat: no-repeat;
     background-size: 18px 18px;
@@ -166,15 +184,16 @@
     transition: all 250ms ease-in-out;
     backface-visibility: hidden;
     transform-style: preserve-3d;
-    align-items: center;
 }
 
+/* Search Input Placeholder */
 .search__input::placeholder {
     color: rgba(87, 87, 86, 0.8);
     text-transform: uppercase;
     letter-spacing: 1.5px;
 }
 
+/* Search Input Hover and Focus */
 .search__input:hover,
 .search__input:focus {
     padding: 12px 0;
@@ -185,10 +204,11 @@
     background-position: 100% center;
 }
 
+/* Sort Select */
 .sort__select {
-    margin-top: 10px;
+    flex: 1; /* Allow select to grow and shrink */
+    margin: 10px; /* Add margin between items */
     padding: 12px 24px;
-    width: 100%;
     background-color: transparent;
     transition: transform 250ms ease-in-out;
     font-size: 14px;
@@ -200,18 +220,33 @@
     transform-style: preserve-3d;
 }
 
+/* Sort Select Placeholder */
 .sort__select::placeholder {
     color: rgba(87, 87, 86, 0.8);
     text-transform: uppercase;
     letter-spacing: 1.5px;
 }
 
+/* Media Query for smaller screens */
 @media only screen and (max-width: 768px) {
+    .search-sort-container {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+        align-items: center; /* Center align items */
+        margin-left: 30px;
+    }
+    .class-box {
+        min-width: 200px; /* Adjust minimum width for smaller screens */
+        min-height: 200px; /* Ensure the minimum height is enough to contain content */
+    }
+    .search__input,
+    .sort__select {
+        width: 90%; /* Set width to take up 90% of the container */
+    }
     .blurb-container h2 {
-        font-size: 4vw;
+        font-size: 5vw;
         line-height: 1.6;
         max-width: 90%;
         z-index: 1;
         font-family: 'EB Garamond', serif; /* Apply the font family */
     }
-  }
+}

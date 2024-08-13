@@ -5,17 +5,27 @@ import './supporting/style/Footer.css'; // for Footer.js
 import NavBar from './NavBar'; // Import the NavBar component
 import Footer from './Footer'
 
-const Header = () => (
-  <header className="header">
-    <div className="header-titles">
-      <div className="header-title">Vasant Shobha Foundation</div>
-      <div className="header-subtitle">वसंत शोभा फाउंडेशन</div>
-    </div>
-    <div className="down-arrow">
-            <img src="https://static.thenounproject.com/png/196759-200.png" alt="Scroll Down" className="scroll-down-img" />
-    </div>
-  </header>
-);
+const Header = () => {
+  const scrollDown = () => {
+    window.scrollBy({
+      top: window.innerHeight,
+      behavior: 'smooth'
+    });
+  };
+
+  return (
+    <header className="header">
+      <div className="header-titles">
+        <div className="header-title">Vasant Shobha</div>
+        <div className="header-title">Foundation</div>
+        <div className="header-subtitle">वसंत शोभा फाउंडेशन</div>
+      </div>
+      <div className="down-arrow" onClick={scrollDown}>
+        <img src="https://static.thenounproject.com/png/196759-200.png" alt="Scroll Down" className="scroll-down-img" />
+      </div>
+    </header>
+  );
+};
 
 
 const FoundationInfo = () => (

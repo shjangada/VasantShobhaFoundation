@@ -5,7 +5,7 @@
 .footer__container {
   background-color: #293827; 
   color: #fff; 
-  width: 100vw;
+  width: 100%;
   padding-bottom: 20px; /* Add padding to the bottom */
 }
 
@@ -91,4 +91,20 @@
 
 .footer__copyright-link:hover {
   color: #fff;
+}
+
+@media (max-width: 800px) {
+  .footer__logo-text {
+    display: none; /* Hide the title on small screens */
+  }
+
+  .footer__content {
+    flex-direction: column; /* Stack content vertically */
+    align-items: center;
+  }
+
+  .footer__copyright {
+    align-items: center;
+    margin-left: 0;
+  }
 }

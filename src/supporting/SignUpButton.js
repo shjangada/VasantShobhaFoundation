@@ -3,8 +3,10 @@ import './style/SignUpButton.css';
 
 const SignUpButton = ({ onClick }) => {
   return (
-    <div className="frame">
-      <button className="custom-btn btn-3" onClick={onClick}><span>Sign Up</span></button>
+    <div className="sign-up-container">
+      <button className="custom-btn btn-3" onClick={onClick}>
+        Sign Up
+      </button>
     </div>
   );
 };

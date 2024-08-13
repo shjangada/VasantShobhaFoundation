@@ -1,19 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import Papa from 'papaparse';
 import NavBar from './NavBar';
-import Classes from './csv/YouthClasses.csv';
 import SearchableClassList from './SearchableClassList';
+import Footer from './Footer';
 import photo1 from './supporting/style/assets/kidphotos/kidpic1.JPG';
 import photo2 from './supporting/style/assets/kidphotos/kidpic2.JPG';
 import photo3 from './supporting/style/assets/kidphotos/kidpic3.JPG';
 import photo4 from './supporting/style/assets/kidphotos/kidpic4.JPG';
-import Footer from './Footer';
+import ClassesCSV from './csv/Classes.csv';
 
-const YouthClasses = () => {
+const UnifiedClassesPage = () => {
   const [classes, setClasses] = useState([]);
 
   useEffect(() => {
-    fetch(Classes)
+    fetch(ClassesCSV)
       .then(response => {
         console.log('Fetch response:', response);
         if (!response.ok) {
@@ -42,13 +42,10 @@ const YouthClasses = () => {
       <div className="blurb-container">
         <h2>We offer a diverse range of enriching and engaging courses designed to enhance your skills, spark creativity, and foster a love for lifelong learning. Whether you're looking to develop a new hobby, advance your career, or simply meet like-minded individuals, our classes provide the perfect environment for growth and exploration.</h2>
         <div className="slideshow">
-            <img src={photo1} alt="Photo 1" />
-            <img src={photo2} alt="Photo 2" />
-            <img src={photo3} alt="Photo 3" />
-            <img src={photo4} alt="Photo 4" />
-        </div>
-        <div className="down-arrow">
-          <img src="https://static.thenounproject.com/png/196759-200.png" alt="Scroll Down" className="scroll-down-img" />
+          <img src={photo1} alt="Photo 1" />
+          <img src={photo2} alt="Photo 2" />
+          <img src={photo3} alt="Photo 3" />
+          <img src={photo4} alt="Photo 4" />
         </div>
       </div>
       <SearchableClassList classes={classes} />
@@ -57,4 +54,4 @@ const YouthClasses = () => {
   );
 };
 
-export default YouthClasses;
+export default UnifiedClassesPage;
