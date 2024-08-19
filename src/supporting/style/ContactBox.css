@@ -98,4 +98,13 @@
   .contact-text {
     font-size: 1.2em; /* Further reduce font size for screens smaller than 768px */
   }
+  .content-wrapper {
+    margin: 10px auto;
+  }
+  .contact-text {
+    font-size: 1em;
+  }
+  .form iframe {
+    height: 500px;
+  }
 }

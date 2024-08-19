@@ -238,6 +238,9 @@
         min-width: 200px; /* Adjust minimum width for smaller screens */
         min-height: 200px; /* Ensure the minimum height is enough to contain content */
     }
+    .class__body {
+        height: auto;
+    }
     .search__input,
     .sort__select {
         width: 90%; /* Set width to take up 90% of the container */

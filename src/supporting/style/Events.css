@@ -111,12 +111,13 @@
 
 .event-box h3 {
     margin: 0px 0;
-    font-size: 1.2em;
+    font-size: 1em;
 }
 
 .event-box p {
     margin-bottom: 15px;
     font-size: 0.9em;
+    text-align: left;
 }
 
 @media only screen and (max-width: 768px) {

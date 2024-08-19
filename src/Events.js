@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Papa from 'papaparse';
 import NavBar from './NavBar';
 import Footer from './Footer';
-import SignUpModal from './supporting/SignUpModal';
+import EventsModal from './supporting/EventsModal';
 import DescriptionPopup from './supporting/DescriptionPopup';
 import SignUpButton from './supporting/SignUpButton';
 import './supporting/style/Events.css';
@@ -18,7 +18,7 @@ const Event = ({ eventEntry, onEventClick, onSignUpClick }) => {
       </div>
       <div className="event-text-container">
         <h3>{eventEntry.title}</h3>
-        <p>{eventEntry.description}</p>
+        <p>Location: {eventEntry.location}</p>
         {eventEntry.type.toLowerCase() === 'upcoming' && (
           <button className="sign-up-icon" onClick={(e) => { e.stopPropagation(); onSignUpClick(eventEntry); }}>
             <LuClipboardSignature />
@@ -127,7 +127,7 @@ const EventsPage = () => {
         <div className="events-page">
             <EventList events={events} onEventClick={handleEventClick} onSignUpClick={handleSignUpClick} />
             {showModal && (
-                <SignUpModal
+                <EventsModal
                 eventEntry={selectedEvent}
                 closeModal={handleModalClose}
                 onSubmit={handleFormSubmit}

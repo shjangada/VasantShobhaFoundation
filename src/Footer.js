@@ -11,9 +11,9 @@ const Footer = () => {
           <div>
             <h2 className="footer__heading">INFORMATION</h2>
             <ul className="footer__list">
-              <li><a href="./youth" className="footer__link">Youth</a></li>
-              <li><a href="./adult" className="footer__link">Adult</a></li>
-              <li><a href="./team" className="footer__link">Teachers</a></li>
+              <li><a href="./team" className="footer__link">Team</a></li>
+              <li><a href="./classes" className="footer__link">Classes</a></li>
+              <li><a href="./events" className="footer__link">Events</a></li>
             </ul>
           </div>
           <div>
