@@ -13,7 +13,7 @@ const Event = ({ eventEntry, onEventClick, onSignUpClick }) => {
   return (
     <div
       className="event-box"
-      onClick={() => onEventClick(eventEntry)}
+      onClick={(e) => { e.stopPropagation(); onSignUpClick(eventEntry); }}
       style={{ cursor: 'pointer' }} // Change cursor to pointer to indicate it's clickable
     >
       <div className="event-photo-container">
