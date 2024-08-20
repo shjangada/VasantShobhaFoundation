@@ -11,7 +11,11 @@ import { LuClipboardSignature } from "react-icons/lu";
 
 const Event = ({ eventEntry, onEventClick, onSignUpClick }) => {
   return (
-    <div className="event-box">
+    <div
+      className="event-box"
+      onClick={() => onEventClick(eventEntry)}
+      style={{ cursor: 'pointer' }} // Change cursor to pointer to indicate it's clickable
+    >
       <div className="event-photo-container">
         <img src={eventEntry.photoUrl} alt={eventEntry.title} className="event-photo" />
         <div className="event-time">{eventEntry.time}</div>
