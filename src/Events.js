@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import Papa from 'papaparse';
 import NavBar from './NavBar';
@@ -9,12 +10,14 @@ import './supporting/style/Events.css';
 import EventsCSV from './csv/Events.csv';
 import { LuClipboardSignature } from "react-icons/lu";
 
-const Event = ({ eventEntry, onEventClick, onSignUpClick }) => {
+const Event = ({ eventEntry, onSignUpClick }) => {
+  const isUpcoming = eventEntry.type.toLowerCase() === 'upcoming';
+  
   return (
     <div
-      className="event-box"
-      onClick={(e) => { e.stopPropagation(); onSignUpClick(eventEntry); }}
-      style={{ cursor: 'pointer' }} // Change cursor to pointer to indicate it's clickable
+      className={`event-box ${isUpcoming ? 'clickable' : ''}`}
+      onClick={isUpcoming ? (e) => { e.stopPropagation(); onSignUpClick(eventEntry); } : null}
+      style={{ cursor: isUpcoming ? 'pointer' : 'default' }} // Show pointer cursor only if clickable
     >
       <div className="event-photo-container">
         <img src={eventEntry.photoUrl} alt={eventEntry.title} className="event-photo" />
@@ -23,7 +26,7 @@ const Event = ({ eventEntry, onEventClick, onSignUpClick }) => {
       <div className="event-text-container">
         <h3>{eventEntry.title}</h3>
         <p>Location: {eventEntry.location}</p>
-        {eventEntry.type.toLowerCase() === 'upcoming' && (
+        {isUpcoming && (
           <button className="sign-up-icon" onClick={(e) => { e.stopPropagation(); onSignUpClick(eventEntry); }}>
             <LuClipboardSignature />
           </button>
@@ -32,6 +35,7 @@ const Event = ({ eventEntry, onEventClick, onSignUpClick }) => {
     </div>
   );
 };
+
 
 
 const EventList = ({ events, onEventClick, onSignUpClick }) => {
