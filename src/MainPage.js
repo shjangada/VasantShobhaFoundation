@@ -40,7 +40,7 @@ const FoundationInfo = () => (
 const HeaderBoxes = () => (
   <div className="info-container">
     <div className="info-box">
-      <<Compass size={75} color="#45613D" weight="duotone" className="team-img"/>
+      <Compass size={75} color="#45613D" weight="duotone" className="team-img"/>
       <p className="info-title">MISSION</p>
       <p className="info-p">The Vasant Shobha Foundation was established with the mission to provide quality education to people of all ages. We believe in the power of education to transform lives and communities, fostering opportunities for growth, empowerment, and societal advancement. Through our diverse programs and initiatives, we strive to create a world where knowledge is accessible to all, enabling individuals to reach their full potential and contribute meaningfully to society.</p>
     </div>
