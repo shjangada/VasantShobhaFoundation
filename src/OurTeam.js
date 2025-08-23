@@ -39,7 +39,7 @@ const OurTeam = () => {
               <div className="details">
                 <h3 className="name">{member.Name}</h3>
                 <span className="position">{member.Position} | {member.Town}</span>
-                <span className="description" dangerouslySetInnerHTML={{ __html: member.Description.replace(/\n/g, '<br />') }}></span>
+                <span className="description" dangerouslySetInnerHTML={{__html: (member.Description || "").replace(/\n/g, "<br />"),}}></span>
               </div>
             </div>
           ))}
