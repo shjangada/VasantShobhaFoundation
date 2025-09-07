@@ -97,7 +97,7 @@ const EventsPage = () => {
                 )
               )
               // filter out blank lines / rows with no title or type
-              .filter(r => r.title && r.type);
+              .filter(r => r.title?.trim() && r.type?.trim())
         
             console.log('Cleaned CSV data:', cleaned);
             setEvents(cleaned);
