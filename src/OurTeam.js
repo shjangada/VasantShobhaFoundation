@@ -11,16 +11,27 @@ const OurTeam = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch(People); // Replace with the actual path to your CSV file
+        const response = await fetch(People);
         const text = await response.text();
-        const result = Papa.parse(text, { header: true });
-        console.log('Parsed CSV data:', result.data); // Log the parsed data
-        setTeamMembers(result.data);
+  
+        const result = Papa.parse(text, {
+          header: true,
+          skipEmptyLines: 'greedy',               // ← ignores trailing blank line(s)
+          transformHeader: (h) => h.trim(),       // clean headers like "Phone Number"
+          transform: (v) => (v ?? '').trim(),     // trim cell whitespace
+        });
+  
+        // Filter out rows with no real content (e.g., the ghost row)
+        const cleaned = result.data.filter(
+          (row) => row && (row.Name ?? '').trim() !== ''
+        );
+  
+        setTeamMembers(cleaned);
       } catch (error) {
         console.error('Error fetching or parsing CSV:', error);
       }
     };
-
+  
     fetchData();
   }, []);
 
