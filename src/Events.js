@@ -87,17 +87,23 @@ const EventsPage = () => {
         Papa.parse(csvText, {
           header: true,
           complete: (results) => {
-            console.log('Parsed CSV data:', results.data); // Log the parsed data
-            setEvents(results.data);
+            const cleaned = results.data
+              .map(row =>
+                Object.fromEntries(
+                  Object.entries(row).map(([k, v]) => [
+                    k.trim(),
+                    typeof v === 'string' ? v.trim() : v
+                  ])
+                )
+              )
+              // filter out blank lines / rows with no title or type
+              .filter(r => r.title && r.type);
+        
+            console.log('Cleaned CSV data:', cleaned);
+            setEvents(cleaned);
           },
-          error: (error) => {
-            console.error('Error parsing CSV:', error);
-          }
+          error: (err) => console.error('Error parsing CSV:', err)
         });
-      })
-      .catch(error => {
-        console.error('Error fetching CSV:', error);
-      });
   }, []);
 
   const handleSignUpClick = (eventEntry) => {
