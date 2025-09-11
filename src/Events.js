@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import Papa from 'papaparse';
 import NavBar from './NavBar';
@@ -36,8 +35,6 @@ const Event = ({ eventEntry, onSignUpClick }) => {
   );
 };
 
-
-
 const EventList = ({ events, onEventClick, onSignUpClick }) => {
     // Filter events with proper checks for undefined `type`
     const upcomingEvents = events.filter(event => event.type && event.type.toLowerCase() === 'upcoming');
@@ -71,8 +68,7 @@ const EventList = ({ events, onEventClick, onSignUpClick }) => {
         </div>
       </div>
     );
-  };
-  
+};
 
 const EventsPage = () => {
   const [events, setEvents] = useState([]);
@@ -97,13 +93,14 @@ const EventsPage = () => {
                 )
               )
               // filter out blank lines / rows with no title or type
-              .filter(r => r.title?.trim() && r.type?.trim())
+              .filter(r => r.title?.trim() && r.type?.trim());
         
             console.log('Cleaned CSV data:', cleaned);
             setEvents(cleaned);
           },
           error: (err) => console.error('Error parsing CSV:', err)
         });
+      });
   }, []);
 
   const handleSignUpClick = (eventEntry) => {
