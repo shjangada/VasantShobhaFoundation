@@ -11,6 +11,7 @@ const EventsModal = ({ closeModal }) => {
       <div className="modal-content">
         <iframe
           src="https://form.jotform.com/242300202386140"
+          title="Events form"
           width="100%"
           height="500"
           frameBorder="0"
