@@ -19,6 +19,7 @@ const ContactBox = () => {
       <div className="form">
         <iframe
           src="https://form.jotform.com/241497124570154"
+          title="Contact form"
           width="100%"
           height="600"
           frameBorder="0"
