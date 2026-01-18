@@ -15,7 +15,7 @@ import './style/OpenLayersMap.css';
 const OpenLayersMap = ({ classes }) => {
   const mapRef = useRef();
   const [map, setMap] = useState(null);
-  const [vectorSource, setVectorSource] = useState(new VectorSource());
+  const [vectorSource] = useState(new VectorSource());
   const [selectedClass, setSelectedClass] = useState(null);
 
   useEffect(() => {
