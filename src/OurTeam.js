@@ -45,7 +45,7 @@ const OurTeam = () => {
           {teamMembers.map((member, index) => (
             <div className="our-team" key={index}>
               <div className="pic">
-                <img src={member.Photo} alt={`${member.Name}'s Photo`} />
+                <img src={member.Photo} alt={member.Name} />
               </div>
               <div className="details">
                 <h3 className="name">{member.Name}</h3>
