@@ -11,6 +11,7 @@ const SignUpModal = ({ closeModal }) => {
       <div className="modal-content">
         <iframe
           src="https://form.jotform.com/241497010596156"
+          title="Sign up form"
           width="100%"
           height="500"
           frameBorder="0"
