@@ -4,7 +4,7 @@ import NavBar from './NavBar';
 import Footer from './Footer';
 import EventsModal from './supporting/EventsModal';
 import DescriptionPopup from './supporting/DescriptionPopup';
-import SignUpButton from './supporting/SignUpButton';
+#import SignUpButton from './supporting/SignUpButton';
 import './supporting/style/Events.css';
 import EventsCSV from './csv/Events.csv';
 import { LuClipboardSignature } from "react-icons/lu";
