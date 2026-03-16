@@ -3,19 +3,30 @@ import Papa from 'papaparse';
 import NavBar from './NavBar';
 import Footer from './Footer';
 import EventsModal from './supporting/EventsModal';
-import DescriptionPopup from './supporting/DescriptionPopup';
+import EventDetailsPopup from './supporting/EventDetailsPopup';
 import './supporting/style/Events.css';
 import EventsCSV from './csv/Events.csv';
 import { LuClipboardSignature } from "react-icons/lu";
 
-const Event = ({ eventEntry, onSignUpClick }) => {
+const Event = ({ eventEntry, onEventClick, onSignUpClick }) => {
   const isUpcoming = eventEntry.type.toLowerCase() === 'upcoming';
+
+  const handleBoxClick = (e) => {
+    e.stopPropagation();
+    if (isUpcoming) {
+      onSignUpClick?.(eventEntry);
+    } else {
+      onEventClick?.(eventEntry);
+    }
+  };
+
+  const isClickable = isUpcoming || typeof onEventClick === 'function';
   
   return (
     <div
-      className={`event-box ${isUpcoming ? 'clickable' : ''}`}
-      onClick={isUpcoming ? (e) => { e.stopPropagation(); onSignUpClick(eventEntry); } : null}
-      style={{ cursor: isUpcoming ? 'pointer' : 'default' }} // Show pointer cursor only if clickable
+      className={`event-box ${isClickable ? 'clickable' : ''}`}
+      onClick={isClickable ? handleBoxClick : undefined}
+      style={{ cursor: isClickable ? 'pointer' : 'default' }}
     >
       <div className="event-photo-container">
         <img src={eventEntry.photoUrl} alt={eventEntry.title} className="event-photo" />
@@ -25,7 +36,13 @@ const Event = ({ eventEntry, onSignUpClick }) => {
         <h3>{eventEntry.title}</h3>
         <p>Location: {eventEntry.location}</p>
         {isUpcoming && (
-          <button className="sign-up-icon" onClick={(e) => { e.stopPropagation(); onSignUpClick(eventEntry); }}>
+          <button
+            className="sign-up-icon"
+            onClick={(e) => {
+              e.stopPropagation();
+              onSignUpClick?.(eventEntry);
+            }}
+          >
             <LuClipboardSignature />
           </button>
         )}
@@ -144,7 +161,7 @@ const EventsPage = () => {
                 />
             )}
             {showDescriptionPopup && (
-                <DescriptionPopup eventEntry={selectedEvent} onClose={handlePopupClose} />
+                <EventDetailsPopup eventEntry={selectedEvent} onClose={handlePopupClose} />
             )}
         </div>
         <Footer />
