@@ -74,7 +74,7 @@ const EventDetailsPopup = ({ eventEntry, onClose }) => {
 
               <img
                 src={photos[currentIndex]}
-                alt={`${eventEntry.title} photo ${currentIndex + 1}`}
+                alt={`${eventEntry.title} – view ${currentIndex + 1}`}
                 className="event-details-main-photo"
               />
 
@@ -99,11 +99,11 @@ const EventDetailsPopup = ({ eventEntry, onClose }) => {
                       index === currentIndex ? ' event-details-thumbnail-btn--active' : ''
                     }`}
                     onClick={() => setCurrentIndex(index)}
-                    aria-label={`Show photo ${index + 1}`}
+                    aria-label={`Show view ${index + 1}`}
                   >
                     <img
                       src={url}
-                      alt={`${eventEntry.title} thumbnail ${index + 1}`}
+                      alt={`${eventEntry.title} – view ${index + 1}`}
                       className="event-details-thumbnail-img"
                     />
                   </button>
