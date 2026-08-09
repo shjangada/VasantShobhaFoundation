@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap');
 
 .navbar__container {
   display: flex;
@@ -15,6 +16,7 @@
   box-sizing: border-box;
   padding: 10px 20px;
   min-height: 64px;
+  transition: background 0.25s ease, color 0.25s ease;
 }
 
 .navbar__green {
@@ -33,8 +35,8 @@
 }
 
 .navbar__mark {
-  width: 44px;
-  height: 40px;
+  width: 46px;
+  height: 38px;
   border-radius: 50%;
   overflow: hidden;
   flex-shrink: 0;
@@ -47,12 +49,10 @@
 .navbar__mark img {
   width: 118%;
   height: 100%;
-  max-width: none;
   object-fit: cover;
   object-position: center;
   display: block;
   margin-left: -9%;
-  transform: none;
   border: none;
 }
 
@@ -69,7 +69,7 @@
   font-family: 'Libre Baskerville', serif;
   font-size: 1.05rem;
   font-weight: 700;
-  letter-spacing: 0.01em;
+  letter-spacing: 0;
   white-space: nowrap;
 }
 
@@ -77,16 +77,18 @@
   font-family: 'Libre Baskerville', serif;
   font-size: 0.78rem;
   font-weight: 400;
-  letter-spacing: 0.02em;
+  letter-spacing: 0;
   text-transform: none;
   opacity: 0.9;
   text-align: left;
 }
 
 .navbar__scrolled {
-  background: rgba(0, 0, 0, 0.55);
+  background: rgba(55, 78, 52, 0.58);
   color: white;
   width: 100%;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
 }
 
 .navbar__container-links {
@@ -135,8 +137,8 @@
   }
 
   .navbar__mark {
-    width: 38px;
-    height: 34px;
+    width: 40px;
+    height: 32px;
   }
 
   .navbar__wordmark-name {
@@ -145,7 +147,6 @@
 
   .navbar__wordmark-sub {
     font-size: 0.68rem;
-    letter-spacing: 0.02em;
   }
 
   .navbar__container-links {
@@ -161,11 +162,11 @@
 }
 
 @media (max-width: 520px) {
-  .navbar__wordmark-name {
-    font-size: 0.8rem;
+  .navbar__wordmark-sub {
+    display: none;
   }
 
-  .navbar__wordmark-sub {
-    font-size: 0.62rem;
+  .navbar__wordmark-name {
+    font-size: 0.8rem;
   }
 }
