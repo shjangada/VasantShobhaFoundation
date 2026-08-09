@@ -17,19 +17,8 @@ const CATEGORY_ORDER = [
   'Education & Guidance',
 ];
 
-const getPhotoCount = (eventEntry) => {
-  if (eventEntry.galleryPhotos) {
-    return eventEntry.galleryPhotos
-      .split('|')
-      .map((url) => url.trim())
-      .filter(Boolean).length;
-  }
-  return eventEntry.photoUrl ? 1 : 0;
-};
-
 const Event = ({ eventEntry, onEventClick, onSignUpClick }) => {
   const isUpcoming = eventEntry.type.toLowerCase() === 'upcoming';
-  const photoCount = getPhotoCount(eventEntry);
 
   const handleBoxClick = (e) => {
     e.stopPropagation();
@@ -51,11 +40,6 @@ const Event = ({ eventEntry, onEventClick, onSignUpClick }) => {
       <div className="event-photo-container">
         <img src={eventEntry.photoUrl} alt={eventEntry.title} className="event-photo" />
         <div className="event-time">{eventEntry.time}</div>
-        {photoCount > 1 && (
-          <div className="event-photo-count" aria-label={`${photoCount} photos`}>
-            {photoCount} photos
-          </div>
-        )}
       </div>
       <div className="event-text-container">
         {eventEntry.category && <span className="event-category-tag">{eventEntry.category}</span>}
@@ -337,7 +321,6 @@ const EventsPage = () => {
 
   const jumpToCategory = (category) => {
     setActiveCategory(category);
-    setBrowseMode('activity');
     const id = category === 'All' ? 'upcoming' : slugify(category);
     requestAnimationFrame(() => {
       document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
