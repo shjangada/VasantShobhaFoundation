@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import './supporting/style/NavBar.css';
-import Logo from './supporting/newlogo.png';
+import NavMark from './supporting/nav-mark.png';
 
 const NavBar = ({ greenBackground }) => {
   const [scrolled, setScrolled] = useState(false);
@@ -24,8 +24,14 @@ const NavBar = ({ greenBackground }) => {
 
   return (
     <nav className={`navbar__container ${greenBackground ? 'navbar__green' : 'navbar__main'} ${scrolled ? 'navbar__scrolled' : ''}`}>
-      <Link to="/" className="navbar__container-logo" aria-label="Home">
-        <img src={Logo} alt="Logo" />
+      <Link to="/" className="navbar__brand" aria-label="Vasant Shobha Foundation home">
+        <span className="navbar__mark">
+          <img src={NavMark} alt="" />
+        </span>
+        <span className="navbar__wordmark">
+          <span className="navbar__wordmark-name">Vasant Shobha</span>
+          <span className="navbar__wordmark-sub">Foundation</span>
+        </span>
       </Link>
       <ul className="navbar__container-links">
         {links.map((link) => {

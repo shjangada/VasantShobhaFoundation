@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
 
 .navbar__container {
   display: flex;
@@ -12,25 +13,69 @@
   z-index: 1000;
   width: 100%;
   box-sizing: border-box;
-  padding: 8px 20px;
+  padding: 10px 20px;
+  min-height: 64px;
 }
 
 .navbar__green {
-  color: darkgreen;
+  color: #193d09;
   background: rgba(255, 255, 255, 0.96);
 }
 
-.navbar__container-logo {
+.navbar__brand {
   display: flex;
   align-items: center;
+  gap: 10px;
   flex-shrink: 0;
   text-decoration: none;
+  color: inherit;
+  min-width: 0;
 }
 
-.navbar__container-logo img {
-  width: 130px;
-  height: auto;
+.navbar__mark {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+  flex-shrink: 0;
   display: block;
+  background: #000;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.15);
+}
+
+.navbar__green:not(.navbar__scrolled) .navbar__mark {
+  box-shadow: 0 0 0 1px rgba(25, 61, 9, 0.15);
+}
+
+.navbar__mark img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.navbar__wordmark {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+  min-width: 0;
+}
+
+.navbar__wordmark-name {
+  font-family: 'Libre Baskerville', serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+
+.navbar__wordmark-sub {
+  font-family: 'Raleway', 'Inter', sans-serif;
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.85;
 }
 
 .navbar__scrolled {
@@ -44,8 +89,8 @@
   padding: 0;
   margin: 0;
   display: flex;
-  gap: 6px;
-  font-size: 1.05em;
+  gap: 4px;
+  font-size: 0.95rem;
   justify-content: flex-end;
   font-weight: 600;
   text-transform: uppercase;
@@ -60,7 +105,7 @@
   text-decoration: none;
   color: inherit;
   font-size: 1em;
-  padding: 8px 14px;
+  padding: 7px 12px;
   border-radius: 999px;
   transition: background 0.2s ease, color 0.2s ease;
   display: inline-block;
@@ -79,22 +124,43 @@
 
 @media (max-width: 800px) {
   .navbar__container {
-    padding: 6px 12px;
+    padding: 8px 10px;
+    min-height: 56px;
     gap: 8px;
   }
 
-  .navbar__container-logo img {
-    width: 72px;
+  .navbar__mark {
+    width: 34px;
+    height: 34px;
+  }
+
+  .navbar__wordmark-name {
+    font-size: 0.88rem;
+  }
+
+  .navbar__wordmark-sub {
+    font-size: 0.58rem;
+    letter-spacing: 0.1em;
   }
 
   .navbar__container-links {
-    font-size: 0.7em;
-    gap: 2px;
-    flex-wrap: wrap;
+    font-size: 0.68rem;
+    gap: 1px;
+    flex-wrap: nowrap;
     justify-content: flex-end;
   }
 
   .navbar__container-links a {
-    padding: 6px 8px;
+    padding: 5px 7px;
+  }
+}
+
+@media (max-width: 520px) {
+  .navbar__wordmark-sub {
+    display: none;
+  }
+
+  .navbar__wordmark-name {
+    font-size: 0.8rem;
   }
 }
