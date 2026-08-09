@@ -9,8 +9,8 @@ const ContactBox = () => {
         <p>
           Feel free to send us a message and we will get back to you as soon as possible. You can also email us at{' '}
           <strong>
-            <a href="mailto:info@vasantshobha.org" style={{ textDecoration: 'none', color: 'inherit' }}>
-              info@vasantshobha.org
+            <a href="mailto:info@vasantshobhafoundation.org" style={{ textDecoration: 'none', color: 'inherit' }}>
+              info@vasantshobhafoundation.org
             </a>
           </strong>
         </p>

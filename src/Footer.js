@@ -1,33 +1,47 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './supporting/style/Footer.css';
 
-
 const Footer = () => {
+  const year = new Date().getFullYear();
+
   return (
     <footer className="footer__container">
       <div className="footer__content">
-        <li><a href="./" className="footer__logo-text">VASANT SHOBHA FOUNDATION</a></li>
+        <Link to="/" className="footer__logo-text">
+          VASANT SHOBHA FOUNDATION
+        </Link>
         <div className="footer__links">
           <div>
             <h2 className="footer__heading">INFORMATION</h2>
             <ul className="footer__list">
-              <li><a href="./team" className="footer__link">Team</a></li>
-              <li><a href="./classes" className="footer__link">Classes</a></li>
-              <li><a href="./events" className="footer__link">Events</a></li>
+              <li><Link to="/team" className="footer__link">Team</Link></li>
+              <li><Link to="/classes" className="footer__link">Classes</Link></li>
+              <li><Link to="/events" className="footer__link">Events</Link></li>
             </ul>
           </div>
           <div>
             <h2 className="footer__heading">GET INVOLVED</h2>
             <ul className="footer__list">
-              <li><a href="./involved" className="footer__link">Locations</a></li>
-              <li><a href="mailto:info@vasantshobhafoundation.org" className="footer__link">Contact</a></li>
+              <li><Link to="/involved" className="footer__link">Contact</Link></li>
+              <li>
+                <a href="mailto:info@vasantshobhafoundation.org" className="footer__link">
+                  Email Us
+                </a>
+              </li>
             </ul>
           </div>
         </div>
       </div>
       <hr className="footer__divider" />
       <div className="footer__copyright">
-        <span className="footer__copyright-text">© 2024 <a href="./" className="footer__copyright-link">Vasant Shobha Foundation</a>. All Rights Reserved.</span>
+        <span className="footer__copyright-text">
+          © {year}{' '}
+          <Link to="/" className="footer__copyright-link">
+            Vasant Shobha Foundation
+          </Link>
+          . All Rights Reserved.
+        </span>
       </div>
     </footer>
   );
