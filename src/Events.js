@@ -344,6 +344,15 @@ const EventsPage = () => {
     });
   };
 
+  const handleSortChange = (mode) => {
+    setBrowseMode(mode);
+    if (mode === 'activity') {
+      setActiveYear('All');
+    } else {
+      setActiveCategory('All');
+    }
+  };
+
   return (
     <div>
       <NavBar greenBackground={true} />
@@ -352,74 +361,61 @@ const EventsPage = () => {
       </div>
 
       <div className="events-controls">
-        <div className="events-mode-toggle" role="tablist" aria-label="Browse mode">
-          <button
-            type="button"
-            role="tab"
-            aria-selected={browseMode === 'activity'}
-            className={`events-mode-btn${browseMode === 'activity' ? ' is-active' : ''}`}
-            onClick={() => {
-              setBrowseMode('activity');
-              setActiveYear('All');
-            }}
-          >
-            By Activity
-          </button>
-          <button
-            type="button"
-            role="tab"
-            aria-selected={browseMode === 'date'}
-            className={`events-mode-btn${browseMode === 'date' ? ' is-active' : ''}`}
-            onClick={() => {
-              setBrowseMode('date');
-              setActiveCategory('All');
-            }}
-          >
-            By Date
-          </button>
-        </div>
+        <div className="events-controls-row">
+          {browseMode === 'activity' ? (
+            <div className="events-filter-chips" aria-label="Filter by activity">
+              <button
+                type="button"
+                className={`events-chip${activeCategory === 'All' ? ' is-active' : ''}`}
+                onClick={() => jumpToCategory('All')}
+              >
+                All
+              </button>
+              {categories.map((category) => (
+                <button
+                  type="button"
+                  key={category}
+                  className={`events-chip${activeCategory === category ? ' is-active' : ''}`}
+                  onClick={() => jumpToCategory(category)}
+                >
+                  {category}
+                </button>
+              ))}
+            </div>
+          ) : (
+            <div className="events-filter-chips" aria-label="Filter by year">
+              <button
+                type="button"
+                className={`events-chip${activeYear === 'All' ? ' is-active' : ''}`}
+                onClick={() => setActiveYear('All')}
+              >
+                All
+              </button>
+              {years.map((year) => (
+                <button
+                  type="button"
+                  key={year}
+                  className={`events-chip${activeYear === year ? ' is-active' : ''}`}
+                  onClick={() => setActiveYear(year)}
+                >
+                  {year}
+                </button>
+              ))}
+            </div>
+          )}
 
-        {browseMode === 'activity' ? (
-          <div className="events-filter-chips" aria-label="Filter by activity">
-            <button
-              type="button"
-              className={`events-chip${activeCategory === 'All' ? ' is-active' : ''}`}
-              onClick={() => jumpToCategory('All')}
+          <div className="events-sort">
+            <label htmlFor="events-sort-select">Sort by</label>
+            <select
+              id="events-sort-select"
+              value={browseMode}
+              onChange={(e) => handleSortChange(e.target.value)}
             >
-              All
-            </button>
-            {categories.map((category) => (
-              <button
-                type="button"
-                key={category}
-                className={`events-chip${activeCategory === category ? ' is-active' : ''}`}
-                onClick={() => jumpToCategory(category)}
-              >
-                {category}
-              </button>
-            ))}
+              <option value="activity">Activity</option>
+              <option value="date">Date</option>
+            </select>
           </div>
-        ) : (
-          <div className="events-filter-chips" aria-label="Filter by year">
-            <button
-              type="button"
-              className={`events-chip${activeYear === 'All' ? ' is-active' : ''}`}
-              onClick={() => setActiveYear('All')}
-            >
-              All years
-            </button>
-            {years.map((year) => (
-              <button
-                type="button"
-                key={year}
-                className={`events-chip${activeYear === year ? ' is-active' : ''}`}
-                onClick={() => setActiveYear(year)}
-              >
-                {year}
-              </button>
-            ))}
-          </div>
-        )}
+        </div>
       </div>
 
       <div className="events-page">

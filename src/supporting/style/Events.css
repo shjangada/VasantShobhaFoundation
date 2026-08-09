@@ -24,30 +24,12 @@
     margin-top: 28px;
 }
 
-.events-mode-toggle {
+.events-controls-row {
     display: flex;
-    justify-content: center;
-    gap: 8px;
-    margin-bottom: 12px;
-}
-
-.events-mode-btn {
-    font-family: 'Raleway', sans-serif;
-    font-size: 0.92rem;
-    font-weight: 600;
-    border: 1px solid #193d09;
-    background: transparent;
-    color: #193d09;
-    padding: 8px 18px;
-    border-radius: 999px;
-    cursor: pointer;
-    transition: background 0.2s ease, color 0.2s ease;
-}
-
-.events-mode-btn.is-active,
-.events-mode-btn:hover {
-    background: #193d09;
-    color: #fff;
+    align-items: center;
+    gap: 16px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .events-filter-chips {
@@ -55,11 +37,44 @@
     flex-wrap: nowrap;
     gap: 8px;
     overflow-x: auto;
-    justify-content: center;
+    justify-content: flex-start;
     padding: 4px 2px 6px;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: thin;
-    max-width: 100%;
+    flex: 1;
+    min-width: 0;
+}
+
+.events-sort {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-shrink: 0;
+    margin-left: auto;
+    font-family: 'Raleway', sans-serif;
+    white-space: nowrap;
+}
+
+.events-sort label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #193d09;
+}
+
+.events-sort select {
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #193d09;
+    background: #fff;
+    border: 1px solid rgba(25, 61, 9, 0.25);
+    border-radius: 999px;
+    padding: 7px 28px 7px 14px;
+    cursor: pointer;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%23193d09' d='M1 1l5 5 5-5'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
 }
 
 .events-chip {
@@ -335,7 +350,22 @@
         padding: 12px 12px 14px;
     }
 
+    .events-controls-row {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+
     .events-filter-chips {
         justify-content: flex-start;
+        order: 1;
+        width: 100%;
+    }
+
+    .events-sort {
+        order: 0;
+        margin-left: 0;
+        justify-content: flex-end;
+        width: 100%;
     }
 }
