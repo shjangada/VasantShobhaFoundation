@@ -78,7 +78,7 @@ const EventDetailsPopup = ({ eventEntry, onClose }) => {
 
               <img
                 src={photos[currentIndex]}
-                alt={`${eventEntry.title} – view ${currentIndex + 1}`}
+                alt={`${eventEntry.title} view ${currentIndex + 1}`}
                 className="event-details-main-photo"
               />
 
@@ -107,7 +107,7 @@ const EventDetailsPopup = ({ eventEntry, onClose }) => {
                   >
                     <img
                       src={url}
-                      alt={`${eventEntry.title} – view ${index + 1}`}
+                      alt={`${eventEntry.title} view ${index + 1}`}
                       className="event-details-thumbnail-img"
                     />
                   </button>

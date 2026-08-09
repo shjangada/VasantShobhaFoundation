@@ -20,7 +20,7 @@
     background: rgba(255, 255, 255, 0.94);
     backdrop-filter: blur(8px);
     border-bottom: 1px solid rgba(25, 61, 9, 0.12);
-    padding: 14px 20px 16px;
+    padding: 12px 8px 14px;
     margin-top: 28px;
 }
 
@@ -28,9 +28,12 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 16px;
-    max-width: 1200px;
-    margin: 0 auto;
+    gap: 10px;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    padding: 0 4px;
+    box-sizing: border-box;
 }
 
 .events-filter-chips {
@@ -335,11 +338,12 @@
 
     .events-controls {
         top: 58px;
-        padding: 12px 12px 14px;
+        padding: 10px 4px 12px;
     }
 
     .events-controls-row {
-        gap: 10px;
+        gap: 8px;
+        padding: 0 2px;
     }
 
     .events-sort label {

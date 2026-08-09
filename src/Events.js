@@ -181,7 +181,7 @@ const EventList = ({
             onSignUpClick={onSignUpClick}
           />
         ) : (
-          <p className="events-empty">No upcoming events right now — explore past programs below.</p>
+          <p className="events-empty">No upcoming events right now. Explore past programs below.</p>
         )}
       </div>
 
