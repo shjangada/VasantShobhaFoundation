@@ -125,62 +125,6 @@ const HorizontalRow = ({ events, onEventClick, onSignUpClick }) => {
   );
 };
 
-const EventBar = ({ eventEntry, onEventClick, onSignUpClick }) => {
-  const isUpcoming = eventEntry.type.toLowerCase() === 'upcoming';
-  const photoCount = getPhotoCount(eventEntry);
-
-  const handleClick = () => {
-    if (isUpcoming) {
-      onSignUpClick?.(eventEntry);
-    } else {
-      onEventClick?.(eventEntry);
-    }
-  };
-
-  return (
-    <button type="button" className="event-bar" onClick={handleClick}>
-      <img src={eventEntry.photoUrl} alt="" className="event-bar-photo" />
-      <div className="event-bar-body">
-        <div className="event-bar-top">
-          {eventEntry.category && (
-            <span className="event-category-tag">{eventEntry.category}</span>
-          )}
-          {photoCount > 1 && (
-            <span className="event-bar-photo-count">{photoCount} photos</span>
-          )}
-        </div>
-        <h3 className="event-bar-title">{eventEntry.title}</h3>
-        <p className="event-bar-meta">
-          <span>{eventEntry.time}</span>
-          {eventEntry.location && <span>· {eventEntry.location}</span>}
-        </p>
-      </div>
-      <span className="event-bar-chevron" aria-hidden="true">
-        ›
-      </span>
-    </button>
-  );
-};
-
-const MonthEventList = ({ events, onEventClick, onSignUpClick }) => {
-  const shouldScroll = events.length > 4;
-
-  return (
-    <div
-      className={`events-month-list${shouldScroll ? ' events-month-list--scroll' : ''}`}
-    >
-      {events.map((event, index) => (
-        <EventBar
-          key={`${event.title}-${event.sortDate}-${index}`}
-          eventEntry={event}
-          onEventClick={onEventClick}
-          onSignUpClick={onSignUpClick}
-        />
-      ))}
-    </div>
-  );
-};
-
 const EventList = ({
   events,
   browseMode,
@@ -285,11 +229,16 @@ const EventList = ({
             monthGroups.map((group) => (
               <div className="events-month-block" key={group.key} id={`month-${group.key}`}>
                 <h3 className="events-month-label">{group.label}</h3>
-                <MonthEventList
-                  events={group.events}
-                  onEventClick={onEventClick}
-                  onSignUpClick={onSignUpClick}
-                />
+                <div className="events-grid">
+                  {group.events.map((event, index) => (
+                    <Event
+                      key={`${event.title}-${event.sortDate}-${index}`}
+                      eventEntry={event}
+                      onEventClick={onEventClick}
+                      onSignUpClick={onSignUpClick}
+                    />
+                  ))}
+                </div>
               </div>
             ))
           ) : (
@@ -388,19 +337,11 @@ const EventsPage = () => {
 
   const jumpToCategory = (category) => {
     setActiveCategory(category);
+    setBrowseMode('activity');
     const id = category === 'All' ? 'upcoming' : slugify(category);
     requestAnimationFrame(() => {
       document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
-  };
-
-  const handleSortChange = (mode) => {
-    setBrowseMode(mode);
-    if (mode === 'activity') {
-      setActiveYear('All');
-    } else {
-      setActiveCategory('All');
-    }
   };
 
   return (
@@ -408,66 +349,80 @@ const EventsPage = () => {
       <NavBar greenBackground={true} />
       <div className="events__body">
         <h2>Events</h2>
+        <p className="events-subtitle">
+          Browse by activity type or scroll through our timeline — click any event to open its photo gallery.
+        </p>
       </div>
 
       <div className="events-controls">
-        <div className="events-controls-row">
-          <div className="events-controls-spacer" aria-hidden="true" />
-
-          {browseMode === 'activity' ? (
-            <div className="events-filter-chips" aria-label="Filter by activity">
-              <button
-                type="button"
-                className={`events-chip${activeCategory === 'All' ? ' is-active' : ''}`}
-                onClick={() => jumpToCategory('All')}
-              >
-                All
-              </button>
-              {categories.map((category) => (
-                <button
-                  type="button"
-                  key={category}
-                  className={`events-chip${activeCategory === category ? ' is-active' : ''}`}
-                  onClick={() => jumpToCategory(category)}
-                >
-                  {category}
-                </button>
-              ))}
-            </div>
-          ) : (
-            <div className="events-filter-chips" aria-label="Filter by year">
-              <button
-                type="button"
-                className={`events-chip${activeYear === 'All' ? ' is-active' : ''}`}
-                onClick={() => setActiveYear('All')}
-              >
-                All
-              </button>
-              {years.map((year) => (
-                <button
-                  type="button"
-                  key={year}
-                  className={`events-chip${activeYear === year ? ' is-active' : ''}`}
-                  onClick={() => setActiveYear(year)}
-                >
-                  {year}
-                </button>
-              ))}
-            </div>
-          )}
-
-          <div className="events-sort">
-            <label htmlFor="events-sort-select">Sort by</label>
-            <select
-              id="events-sort-select"
-              value={browseMode}
-              onChange={(e) => handleSortChange(e.target.value)}
-            >
-              <option value="activity">Activity</option>
-              <option value="date">Date</option>
-            </select>
-          </div>
+        <div className="events-mode-toggle" role="tablist" aria-label="Browse mode">
+          <button
+            type="button"
+            role="tab"
+            aria-selected={browseMode === 'activity'}
+            className={`events-mode-btn${browseMode === 'activity' ? ' is-active' : ''}`}
+            onClick={() => {
+              setBrowseMode('activity');
+              setActiveYear('All');
+            }}
+          >
+            By Activity
+          </button>
+          <button
+            type="button"
+            role="tab"
+            aria-selected={browseMode === 'date'}
+            className={`events-mode-btn${browseMode === 'date' ? ' is-active' : ''}`}
+            onClick={() => {
+              setBrowseMode('date');
+              setActiveCategory('All');
+            }}
+          >
+            By Date
+          </button>
         </div>
+
+        {browseMode === 'activity' ? (
+          <div className="events-filter-chips" aria-label="Filter by activity">
+            <button
+              type="button"
+              className={`events-chip${activeCategory === 'All' ? ' is-active' : ''}`}
+              onClick={() => jumpToCategory('All')}
+            >
+              All
+            </button>
+            {categories.map((category) => (
+              <button
+                type="button"
+                key={category}
+                className={`events-chip${activeCategory === category ? ' is-active' : ''}`}
+                onClick={() => jumpToCategory(category)}
+              >
+                {category}
+              </button>
+            ))}
+          </div>
+        ) : (
+          <div className="events-filter-chips" aria-label="Filter by year">
+            <button
+              type="button"
+              className={`events-chip${activeYear === 'All' ? ' is-active' : ''}`}
+              onClick={() => setActiveYear('All')}
+            >
+              All years
+            </button>
+            {years.map((year) => (
+              <button
+                type="button"
+                key={year}
+                className={`events-chip${activeYear === year ? ' is-active' : ''}`}
+                onClick={() => setActiveYear(year)}
+              >
+                {year}
+              </button>
+            ))}
+          </div>
+        )}
       </div>
 
       <div className="events-page">
