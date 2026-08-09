@@ -36,35 +36,50 @@
     height: 102vh; /* Make the container take up 100% of the viewport height */
     object-fit: cover;
     position: relative;
-    animation: swipe 30s linear infinite;
+    animation: swipe 42s linear infinite;
     opacity: 0.4;
 }
 
-/* Continuous gallery-like rotation effect */
+/* Continuous gallery-like rotation effect (6 slides) */
 @keyframes swipe {
     0% {
         transform: translateX(0%);
     }
-    10% {
+    8% {
         transform: translateX(0%);
     }
-    30% {
+    16% {
         transform: translateX(-100%);
+    }
+    24% {
+        transform: translateX(-100%);
+    }
+    32% {
+        transform: translateX(-200%);
     }
     40% {
-        transform: translateX(-100%);
-    }
-    50% {
         transform: translateX(-200%);
     }
-    60% {
-        transform: translateX(-200%);
-    }
-    70% {
+    48% {
         transform: translateX(-300%);
+    }
+    56% {
+        transform: translateX(-300%);
+    }
+    64% {
+        transform: translateX(-400%);
+    }
+    72% {
+        transform: translateX(-400%);
+    }
+    80% {
+        transform: translateX(-500%);
+    }
+    90% {
+        transform: translateX(-500%);
     }
     100% {
-        transform: translateX(-300%);
+        transform: translateX(-500%);
     }
 }
 

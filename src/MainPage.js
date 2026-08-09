@@ -1,11 +1,9 @@
 import React from 'react';
-import './NavBar'; // Import the NavBar component
-import './supporting/style/MainPage.css'; // for MainPage.js
-import './supporting/style/Footer.css'; // for Footer.js
-import NavBar from './NavBar'; // Import the NavBar component
-import Footer from './Footer'
-import { Compass, RocketLaunch, Target } from '@phosphor-icons/react'; // Import Phosphor Icons
-
+import { Link } from 'react-router-dom';
+import './supporting/style/MainPage.css';
+import NavBar from './NavBar';
+import Footer from './Footer';
+import { Compass, RocketLaunch, Target } from '@phosphor-icons/react';
 
 const Header = () => {
   const scrollDown = () => {
@@ -21,6 +19,14 @@ const Header = () => {
         <div className="header-title">Vasant Shobha</div>
         <div className="header-title">Foundation</div>
         <div className="header-subtitle">वसंत शोभा फाउंडेशन</div>
+        <div className="header-actions">
+          <Link to="/events" className="header-cta header-cta--primary">
+            Explore Events
+          </Link>
+          <Link to="/involved" className="header-cta header-cta--secondary">
+            Get Involved
+          </Link>
+        </div>
       </div>
       <div className="down-arrow" onClick={scrollDown}>
         <img src="https://static.thenounproject.com/png/196759-200.png" alt="Scroll Down" className="scroll-down-img" />

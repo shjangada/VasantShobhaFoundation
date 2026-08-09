@@ -3,11 +3,34 @@ import Papa from 'papaparse';
 import NavBar from './NavBar';
 import SearchableClassList from './SearchableClassList';
 import Footer from './Footer';
-import photo1 from './supporting/style/assets/kidphotos/kidpic1.JPG';
-import photo2 from './supporting/style/assets/kidphotos/kidpic2.JPG';
-import photo3 from './supporting/style/assets/kidphotos/kidpic3.JPG';
-import photo4 from './supporting/style/assets/kidphotos/kidpic4.JPG';
 import ClassesCSV from './csv/Classes.csv';
+
+const slideshowPhotos = [
+  {
+    src: 'https://i.imgur.com/SI2M4yN.jpeg',
+    alt: 'Community planting drive in Mul',
+  },
+  {
+    src: 'https://i.imgur.com/5rHjVWK.jpeg',
+    alt: 'Mahila Day celebration',
+  },
+  {
+    src: 'https://i.imgur.com/njc0pg1.jpeg',
+    alt: 'Morning yoga session',
+  },
+  {
+    src: 'https://i.imgur.com/iZOowWK.jpeg',
+    alt: 'Baal-Sanskaar cultural presentation',
+  },
+  {
+    src: 'https://i.imgur.com/4QVHDpm.jpeg',
+    alt: 'Volunteers planting trees together',
+  },
+  {
+    src: 'https://i.imgur.com/9VMmXuT.jpeg',
+    alt: 'Community yoga practice',
+  },
+];
 
 const UnifiedClassesPage = () => {
   const [classes, setClasses] = useState([]);
@@ -42,10 +65,9 @@ const UnifiedClassesPage = () => {
       <div className="blurb-container">
         <h2>We offer a diverse range of enriching and engaging courses designed to enhance your skills, spark creativity, and foster a love for lifelong learning. Whether you're looking to develop a new hobby, advance your career, or simply meet like-minded individuals, our classes provide the perfect environment for growth and exploration.</h2>
         <div className="slideshow">
-          <img src={photo1} alt="Kids activity 1" />
-          <img src={photo2} alt="Kids activity 2" />
-          <img src={photo3} alt="Kids activity 3" />
-          <img src={photo4} alt="Kids activity 4" />
+          {slideshowPhotos.map((photo) => (
+            <img key={photo.src} src={photo.src} alt={photo.alt} />
+          ))}
         </div>
       </div>
       <SearchableClassList classes={classes} />

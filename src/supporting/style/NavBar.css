@@ -1,37 +1,41 @@
-@import url('https://fonts.googleapis.com/css2?family=EB+Garamond&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
-/* NavBar.css */
 .navbar__container {
   display: flex;
-  justify-content: space-between; /* Ensure title is on the left and links on the right */
+  justify-content: space-between;
   align-items: center;
-  font-family: 'Inter', sans-serif; /* Apply the font family */
-  color: white; /* Set the color to dark green */
-  position: fixed; /* Set position to fixed */
-  z-index: 1000;
-  width: 100%; /* Ensure the navbar spans the full width */
+  font-family: 'Inter', sans-serif;
+  color: white;
   position: fixed;
-  width: 98%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  width: 100%;
   box-sizing: border-box;
+  padding: 8px 20px;
 }
 
 .navbar__green {
-  color: darkgreen; /* Ensure text is white on green background */
+  color: darkgreen;
+  background: rgba(255, 255, 255, 0.96);
 }
 
 .navbar__container-logo {
-  padding-left: 50px; /* Adjust left padding */
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  text-decoration: none;
 }
 
 .navbar__container-logo img {
-  width: 150px; /* Adjust logo width */
+  width: 130px;
+  height: auto;
+  display: block;
 }
 
 .navbar__scrolled {
-  background: rgba(0, 0, 0, 0.5); /* Overlay background color when scrolled */
-  color: white; /* Ensure text color is white */
+  background: rgba(0, 0, 0, 0.55);
+  color: white;
   width: 100%;
 }
 
@@ -40,59 +44,57 @@
   padding: 0;
   margin: 0;
   display: flex;
-  gap: 25px; /* Adjust gap between links */
-  font-size: 1.1em;
-  justify-content: flex-end; /* Align links to the right */
-  margin-right: 25px; /* Add margin to separate links from the right edge */
+  gap: 6px;
+  font-size: 1.05em;
+  justify-content: flex-end;
   font-weight: 600;
-  margin-top: -35px; /* Move links a bit higher */
   text-transform: uppercase;
-  width: 100vw;
   align-items: center;
 }
 
 .navbar__container-links li {
   margin: 0;
-  margin-right: 15px;
 }
 
 .navbar__container-links a {
-  text-decoration: none; /* Remove underline */
-  color: inherit; /* Inherit text color */
-  font-size: 1em; /* Set a consistent font size */
+  text-decoration: none;
+  color: inherit;
+  font-size: 1em;
+  padding: 8px 14px;
+  border-radius: 999px;
+  transition: background 0.2s ease, color 0.2s ease;
+  display: inline-block;
 }
 
-.navbar__container-links a:hover {
-  color: #9b9393; /* Change color on hover */
+.navbar__container-links a:hover,
+.navbar__container-links a.is-active {
+  background: rgba(255, 255, 255, 0.22);
 }
 
-@media (max-width: 768px) {
-  @media (max-width: 800px) {
-    .navbar__container {
-      flex-direction: column;
-      align-items: center; /* Center align the items */
-    }
-  
-    .navbar__container-logo img {
-      display: none; /* Hide the logo */
-    }
-  
-    .navbar__container-links {
-      font-size: 0.8em; /* Further reduce font size for links */
-      justify-content: right; /* Center align the links */
-      padding-top: 50px;
-      padding-left: 25px;
-    }
-  }
+.navbar__green:not(.navbar__scrolled) .navbar__container-links a:hover,
+.navbar__green:not(.navbar__scrolled) .navbar__container-links a.is-active {
+  background: #e8f0e4;
+  color: #193d09;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 800px) {
   .navbar__container {
-    padding: 0 0px;
+    padding: 6px 12px;
+    gap: 8px;
+  }
+
+  .navbar__container-logo img {
+    width: 72px;
   }
 
   .navbar__container-links {
-    gap: 10px;
-    text-align: center;
+    font-size: 0.7em;
+    gap: 2px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  .navbar__container-links a {
+    padding: 6px 8px;
   }
 }

@@ -72,7 +72,7 @@ const GetInvolved = () => {
     fontWeight: '600',
     color: '#1f3a14',
     fontFamily: "'Libre Baskerville', sans-serif",
-    paddingTop: '80px',
+    paddingTop: '110px',
     margin: '15px 0',
   };
 

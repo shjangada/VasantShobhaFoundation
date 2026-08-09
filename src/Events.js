@@ -349,9 +349,6 @@ const EventsPage = () => {
       <NavBar greenBackground={true} />
       <div className="events__body">
         <h2>Events</h2>
-        <p className="events-subtitle">
-          Browse by activity type or scroll through our timeline — click any event to open its photo gallery.
-        </p>
       </div>
 
       <div className="events-controls">
