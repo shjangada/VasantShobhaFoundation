@@ -2,17 +2,94 @@
 @import url('https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
 @import '~@fortawesome/fontawesome-free/css/all.css';
 
-/* General styles for events page */
-
 .events__body h2 {
     display: block;
     font-size: 50px;
     font-weight: 600;
     color: #193d09;
     font-family: 'Libre Baskerville', sans-serif;
-    margin: 0px 0;
+    margin: 0;
     padding-top: 100px;
     text-align: center;
+}
+
+.events-subtitle {
+    max-width: 640px;
+    margin: 12px auto 0;
+    padding: 0 20px;
+    text-align: center;
+    color: #3d5a32;
+    font-family: 'Raleway', sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.events-controls {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(25, 61, 9, 0.12);
+    padding: 14px 20px 16px;
+    margin-top: 28px;
+}
+
+.events-mode-toggle {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.events-mode-btn {
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.92rem;
+    font-weight: 600;
+    border: 1px solid #193d09;
+    background: transparent;
+    color: #193d09;
+    padding: 8px 18px;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease;
+}
+
+.events-mode-btn.is-active,
+.events-mode-btn:hover {
+    background: #193d09;
+    color: #fff;
+}
+
+.events-filter-chips {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 8px;
+    overflow-x: auto;
+    justify-content: flex-start;
+    padding: 4px 2px 6px;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+}
+
+.events-chip {
+    flex: 0 0 auto;
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.85rem;
+    border: 1px solid rgba(25, 61, 9, 0.25);
+    background: #fff;
+    color: #193d09;
+    padding: 7px 14px;
+    border-radius: 999px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.events-chip.is-active,
+.events-chip:hover {
+    background: #e8f0e4;
+    border-color: #193d09;
 }
 
 .events-page {
@@ -24,27 +101,118 @@
 .events-container {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    padding: 20px;
+    align-items: stretch;
+    padding: 20px 0 48px;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .events-section {
-    width: 90%;
-    margin-bottom: 40px;
+    width: 100%;
+    margin-bottom: 36px;
+    padding: 0 20px;
+    scroll-margin-top: 120px;
+}
+
+.events-section-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
 }
 
 .events-section h2 {
-    font-size: 2em;
-    margin-bottom: 20px;
+    font-size: 1.65em;
+    margin: 0;
+    color: #193d09;
+}
+
+.events-count-pill {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #193d09;
+    background: #e8f0e4;
+    border-radius: 999px;
+    padding: 4px 10px;
+}
+
+.events-empty {
+    color: #5a6b52;
+    margin: 0;
+}
+
+.events-row {
+    position: relative;
+}
+
+.events-row-scroller {
+    display: flex;
+    gap: 22px;
+    overflow-x: auto;
+    padding: 6px 4px 18px;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin;
+}
+
+.events-row-scroller .event-box {
+    flex: 0 0 280px;
+    scroll-snap-align: start;
+}
+
+.events-row-nav {
+    position: absolute;
+    top: 40%;
+    z-index: 2;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(25, 61, 9, 0.88);
+    color: #fff;
+    font-size: 1.4rem;
+    line-height: 1;
+    cursor: pointer;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.events-row-nav--left {
+    left: 0;
+}
+
+.events-row-nav--right {
+    right: 0;
+}
+
+@media (hover: hover) and (min-width: 900px) {
+    .events-row-nav {
+        display: flex;
+    }
+}
+
+.events-month-block {
+    margin-bottom: 28px;
+    scroll-margin-top: 120px;
+}
+
+.events-month-label {
+    font-size: 1.1rem;
+    color: #3d5a32;
+    margin: 0 0 14px;
+    font-weight: 600;
+    border-bottom: 1px solid rgba(25, 61, 9, 0.15);
+    padding-bottom: 6px;
 }
 
 .events-grid {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
-    gap: 30px;
+    justify-content: flex-start;
+    gap: 24px;
 }
-/* CSS for the event box */
+
 .event-box {
     border-radius: 5px;
     background: white;
@@ -52,22 +220,26 @@
     width: 300px;
     transition: transform 0.3s ease;
     cursor: pointer;
-    position: relative; /* Ensure positioning for the pseudo-element */
-    box-shadow: 0 4px 8px rgba(119, 118, 118, 0.2); /* Shadow on sides and bottom */
-    overflow: hidden; /* Hide anything that overflows the box */
+    position: relative;
+    box-shadow: 0 4px 8px rgba(119, 118, 118, 0.2);
+    overflow: hidden;
+}
+
+.event-box.clickable:hover {
+    transform: translateY(-3px);
 }
 
 .event-photo-container {
     position: relative;
     width: 100%;
-    height: 200px; /* Match height of event-photo */
+    height: 200px;
 }
 
 .event-photo {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 5px; /* Optional if you want the image to be rounded */
+    border-radius: 5px 5px 0 0;
 }
 
 .event-time {
@@ -80,56 +252,96 @@
     padding: 5px;
     border-radius: 3px;
     box-shadow: 0 1px 2px rgba(119, 118, 118, 0.2);
+    max-width: 70%;
+    text-align: right;
+}
+
+.event-photo-count {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 0.75em;
+    font-weight: 600;
+    color: #193d09;
+    background: rgba(255, 255, 255, 0.92);
+    padding: 4px 8px;
+    border-radius: 999px;
+}
+
+.event-category-tag {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    color: #3d5a32;
+    background: #e8f0e4;
+    padding: 3px 8px;
+    border-radius: 4px;
+    margin-bottom: 8px;
 }
 
 .sign-up-icon {
     position: absolute;
     bottom: 0;
-    right: 0;  
+    right: 0;
     background: white;
     border: none;
     border-radius: 50%;
-    box-shadow: 0 2px 4px rgba(119, 118, 118, 0.2); 
+    box-shadow: 0 2px 4px rgba(119, 118, 118, 0.2);
     cursor: pointer;
     width: 50px;
-    height: 50px; 
+    height: 50px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.5em; 
+    font-size: 1.5em;
     z-index: 1;
-    transition: transform 0.3s ease; /* Add transition for smooth scaling */
+    transition: transform 0.3s ease;
 }
 
 .sign-up-icon:hover {
-    transform: scale(1.2); /* Increase size by 20% on hover */
+    transform: scale(1.2);
 }
 
 .event-text-container {
     padding: 15px;
+    text-align: left;
 }
 
 .event-box h3 {
-    margin: 0px 0;
+    margin: 0 0 8px;
     font-size: 1em;
 }
 
 .event-box p {
-    margin-bottom: 15px;
+    margin-bottom: 0;
     font-size: 0.9em;
     text-align: left;
+    color: #445544;
 }
 
 @media only screen and (max-width: 768px) {
+    .events__body h2 {
+        font-size: 36px;
+        padding-top: 88px;
+    }
+
     .events-section {
-        width: 95%;
+        padding: 0 14px;
     }
-    .events-grid {
-        flex-direction: column;
-        align-items: center;
-    }
+
+    .events-row-scroller .event-box,
     .event-box {
-        width: 90%;
-        max-width: 400px;
+        width: 260px;
+        max-width: 85vw;
+    }
+
+    .events-grid {
+        justify-content: center;
+    }
+
+    .events-controls {
+        top: 0;
+        padding: 12px 12px 14px;
     }
 }

@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 import './style/EventDetailsPopup.css';
 
 const EventDetailsPopup = ({ eventEntry, onClose }) => {
@@ -18,6 +18,10 @@ const EventDetailsPopup = ({ eventEntry, onClose }) => {
   }, [eventEntry]);
 
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    setCurrentIndex(0);
+  }, [eventEntry]);
 
   if (!eventEntry) return null;
 
